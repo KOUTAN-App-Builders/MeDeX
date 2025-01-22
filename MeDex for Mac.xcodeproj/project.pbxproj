@@ -6,17 +6,29 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXFileReference section */
-		3CBE781B2D3E4B8A00021743 /* MeDex for Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MeDex for Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-/* End PBXFileReference section */
+/* Begin PBXBuildFile section */
+		3C3FB7572D41419F001FC995 /* Welcome View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3FB7562D41419F001FC995 /* Welcome View.swift */; };
+		3C3FB7592D41421A001FC995 /* Administrator Setup View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3FB7582D41421A001FC995 /* Administrator Setup View.swift */; };
+		3CBE78342D3E4CB800021743 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBE78302D3E4CB800021743 /* ContentView.swift */; };
+		3CBE78352D3E4CB800021743 /* MeDex_for_MacApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBE78322D3E4CB800021743 /* MeDex_for_MacApp.swift */; };
+		3CBE78362D3E4CB800021743 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CBE782D2D3E4CB800021743 /* Preview Assets.xcassets */; };
+		3CBE78372D3E4CB800021743 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CBE782F2D3E4CB800021743 /* Assets.xcassets */; };
+		3CE922332D3F8F9600E0F967 /* Administrator Login View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE922312D3F8F9600E0F967 /* Administrator Login View.swift */; };
+		3CE922362D3F903300E0F967 /* Doctor Login View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE922352D3F903300E0F967 /* Doctor Login View.swift */; };
+/* End PBXBuildFile section */
 
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		3CBE781D2D3E4B8A00021743 /* MeDex for Mac */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "MeDex for Mac";
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
+/* Begin PBXFileReference section */
+		3C3FB7562D41419F001FC995 /* Welcome View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Welcome View.swift"; sourceTree = "<group>"; };
+		3C3FB7582D41421A001FC995 /* Administrator Setup View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Administrator Setup View.swift"; sourceTree = "<group>"; };
+		3CBE781B2D3E4B8A00021743 /* MeDex for Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MeDex for Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CBE782D2D3E4CB800021743 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3CBE782F2D3E4CB800021743 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3CBE78302D3E4CB800021743 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3CBE78312D3E4CB800021743 /* MeDex_for_Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MeDex_for_Mac.entitlements; sourceTree = "<group>"; };
+		3CBE78322D3E4CB800021743 /* MeDex_for_MacApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeDex_for_MacApp.swift; sourceTree = "<group>"; };
+		3CE922312D3F8F9600E0F967 /* Administrator Login View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Administrator Login View.swift"; sourceTree = "<group>"; };
+		3CE922352D3F903300E0F967 /* Doctor Login View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Doctor Login View.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		3CBE78182D3E4B8A00021743 /* Frameworks */ = {
@@ -29,10 +41,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C3FB7552D414186001FC995 /* Setup View */ = {
+			isa = PBXGroup;
+			children = (
+				3C3FB7562D41419F001FC995 /* Welcome View.swift */,
+				3C3FB7582D41421A001FC995 /* Administrator Setup View.swift */,
+			);
+			path = "Setup View";
+			sourceTree = "<group>";
+		};
 		3CBE78122D3E4B8A00021743 = {
 			isa = PBXGroup;
 			children = (
-				3CBE781D2D3E4B8A00021743 /* MeDex for Mac */,
+				3CBE78332D3E4CB800021743 /* MeDex for Mac */,
 				3CBE781C2D3E4B8A00021743 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +64,45 @@
 				3CBE781B2D3E4B8A00021743 /* MeDex for Mac.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		3CBE782E2D3E4CB800021743 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				3CBE782D2D3E4CB800021743 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3CBE78332D3E4CB800021743 /* MeDex for Mac */ = {
+			isa = PBXGroup;
+			children = (
+				3CBE78322D3E4CB800021743 /* MeDex_for_MacApp.swift */,
+				3CBE78312D3E4CB800021743 /* MeDex_for_Mac.entitlements */,
+				3CBE78302D3E4CB800021743 /* ContentView.swift */,
+				3C3FB7552D414186001FC995 /* Setup View */,
+				3CE922322D3F8F9600E0F967 /* Administrator View */,
+				3CE922342D3F900C00E0F967 /* Doctor View */,
+				3CBE782F2D3E4CB800021743 /* Assets.xcassets */,
+				3CBE782E2D3E4CB800021743 /* Preview Content */,
+			);
+			path = "MeDex for Mac";
+			sourceTree = "<group>";
+		};
+		3CE922322D3F8F9600E0F967 /* Administrator View */ = {
+			isa = PBXGroup;
+			children = (
+				3CE922312D3F8F9600E0F967 /* Administrator Login View.swift */,
+			);
+			path = "Administrator View";
+			sourceTree = "<group>";
+		};
+		3CE922342D3F900C00E0F967 /* Doctor View */ = {
+			isa = PBXGroup;
+			children = (
+				3CE922352D3F903300E0F967 /* Doctor Login View.swift */,
+			);
+			path = "Doctor View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,9 +119,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				3CBE781D2D3E4B8A00021743 /* MeDex for Mac */,
 			);
 			name = "MeDex for Mac";
 			packageProductDependencies = (
@@ -109,6 +166,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CBE78362D3E4CB800021743 /* Preview Assets.xcassets in Resources */,
+				3CBE78372D3E4CB800021743 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +178,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CBE78342D3E4CB800021743 /* ContentView.swift in Sources */,
+				3CE922332D3F8F9600E0F967 /* Administrator Login View.swift in Sources */,
+				3C3FB7592D41421A001FC995 /* Administrator Setup View.swift in Sources */,
+				3C3FB7572D41419F001FC995 /* Welcome View.swift in Sources */,
+				3CBE78352D3E4CB800021743 /* MeDex_for_MacApp.swift in Sources */,
+				3CE922362D3F903300E0F967 /* Doctor Login View.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +322,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.medical";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -284,6 +350,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.medical";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

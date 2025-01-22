@@ -11,7 +11,9 @@ import SwiftUI
 struct MeDex_for_MacApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack{
+                ContentView()
+            }
         }
     }
 }
