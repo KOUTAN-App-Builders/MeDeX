@@ -13,6 +13,7 @@
 		3CBE78352D3E4CB800021743 /* MeDex_for_MacApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBE78322D3E4CB800021743 /* MeDex_for_MacApp.swift */; };
 		3CBE78362D3E4CB800021743 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CBE782D2D3E4CB800021743 /* Preview Assets.xcassets */; };
 		3CBE78372D3E4CB800021743 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CBE782F2D3E4CB800021743 /* Assets.xcassets */; };
+		3CE142072D42935A006BDCF7 /* Basic Instructions View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE142052D429306006BDCF7 /* Basic Instructions View.swift */; };
 		3CE922332D3F8F9600E0F967 /* Administrator Login View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE922312D3F8F9600E0F967 /* Administrator Login View.swift */; };
 		3CE922362D3F903300E0F967 /* Doctor Login View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE922352D3F903300E0F967 /* Doctor Login View.swift */; };
 /* End PBXBuildFile section */
@@ -26,6 +27,7 @@
 		3CBE78302D3E4CB800021743 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3CBE78312D3E4CB800021743 /* MeDex_for_Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MeDex_for_Mac.entitlements; sourceTree = "<group>"; };
 		3CBE78322D3E4CB800021743 /* MeDex_for_MacApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeDex_for_MacApp.swift; sourceTree = "<group>"; };
+		3CE142052D429306006BDCF7 /* Basic Instructions View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Basic Instructions View.swift"; sourceTree = "<group>"; };
 		3CE922312D3F8F9600E0F967 /* Administrator Login View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Administrator Login View.swift"; sourceTree = "<group>"; };
 		3CE922352D3F903300E0F967 /* Doctor Login View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Doctor Login View.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -46,6 +48,7 @@
 			children = (
 				3C3FB7562D41419F001FC995 /* Welcome View.swift */,
 				3C3FB7582D41421A001FC995 /* Administrator Setup View.swift */,
+				3CE142052D429306006BDCF7 /* Basic Instructions View.swift */,
 			);
 			path = "Setup View";
 			sourceTree = "<group>";
@@ -151,6 +154,9 @@
 			);
 			mainGroup = 3CBE78122D3E4B8A00021743;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				3CE142042D429081006BDCF7 /* XCLocalSwiftPackageReference "../Data Manager for MeDeX" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 3CBE781C2D3E4B8A00021743 /* Products */;
 			projectDirPath = "";
@@ -179,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CBE78342D3E4CB800021743 /* ContentView.swift in Sources */,
+				3CE142072D42935A006BDCF7 /* Basic Instructions View.swift in Sources */,
 				3CE922332D3F8F9600E0F967 /* Administrator Login View.swift in Sources */,
 				3C3FB7592D41421A001FC995 /* Administrator Setup View.swift in Sources */,
 				3C3FB7572D41419F001FC995 /* Welcome View.swift in Sources */,
@@ -386,6 +393,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		3CE142042D429081006BDCF7 /* XCLocalSwiftPackageReference "../Data Manager for MeDeX" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../Data Manager for MeDeX";
+		};
+/* End XCLocalSwiftPackageReference section */
 	};
 	rootObject = 3CBE78132D3E4B8A00021743 /* Project object */;
 }
