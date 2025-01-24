@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C07D7532D439FBA0048C2FC /* Administrator Home View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C07D7522D439FBA0048C2FC /* Administrator Home View.swift */; };
 		3C3FB7572D41419F001FC995 /* Welcome View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3FB7562D41419F001FC995 /* Welcome View.swift */; };
 		3C3FB7592D41421A001FC995 /* Administrator Setup View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3FB7582D41421A001FC995 /* Administrator Setup View.swift */; };
 		3CBE78342D3E4CB800021743 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBE78302D3E4CB800021743 /* ContentView.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C07D7522D439FBA0048C2FC /* Administrator Home View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Administrator Home View.swift"; sourceTree = "<group>"; };
 		3C3FB7562D41419F001FC995 /* Welcome View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Welcome View.swift"; sourceTree = "<group>"; };
 		3C3FB7582D41421A001FC995 /* Administrator Setup View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Administrator Setup View.swift"; sourceTree = "<group>"; };
 		3CBE781B2D3E4B8A00021743 /* MeDex for Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MeDex for Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				3CE922312D3F8F9600E0F967 /* Administrator Login View.swift */,
+				3C07D7522D439FBA0048C2FC /* Administrator Home View.swift */,
 			);
 			path = "Administrator View";
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 				3CE922332D3F8F9600E0F967 /* Administrator Login View.swift in Sources */,
 				3C3FB7592D41421A001FC995 /* Administrator Setup View.swift in Sources */,
 				3C3FB7572D41419F001FC995 /* Welcome View.swift in Sources */,
+				3C07D7532D439FBA0048C2FC /* Administrator Home View.swift in Sources */,
 				3CBE78352D3E4CB800021743 /* MeDex_for_MacApp.swift in Sources */,
 				3CE922362D3F903300E0F967 /* Doctor Login View.swift in Sources */,
 			);

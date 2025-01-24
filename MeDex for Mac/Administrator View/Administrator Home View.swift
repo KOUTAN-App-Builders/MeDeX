@@ -8,8 +8,16 @@
 import SwiftUI
 
 struct Administrator_Home_View: View {
+    
+    @State private var AdminName: String = ""
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            Text("Welcome, \(AdminName)!")
+                .font(.title)
+                .bold()
+            
+        }
     }
 }
 

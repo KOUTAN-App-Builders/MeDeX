@@ -9,10 +9,17 @@ import SwiftUI
 
 @main
 struct MeDex_for_MacApp: App {
+    
+    @AppStorage("isFirstLaunch") var isFirstLaunch: Bool = true
+    
     var body: some Scene {
         WindowGroup {
             NavigationStack{
-                ContentView()
+                if isFirstLaunch{
+                    Welcome_View()
+                }else{
+                    ContentView()
+                }
             }
         }
     }

@@ -18,11 +18,13 @@ struct Welcome_View: View {
             }
             Text("Please click on the button below to start the setup process.")
                 .font(.title3)
+            Text("You will be required to add an administrator account first.")
+                .font(.title3)
             NavigationLink {
                 Administrator_Setup_View()
             } label: {
                 Text("Click to Start Setup")
-                    .frame(width: 200, height: 100)
+                    .frame(width: 200, height: 50)
                     .background(Color.accentColor)
                     .foregroundStyle(Color.white)
                     .clipShape(RoundedRectangle(cornerRadius: 10))
