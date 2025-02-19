@@ -32,6 +32,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C04D6F92D46336900041AA6 /* Data Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Data Models";
+			sourceTree = "<group>";
+		};
 		3C65E6D32D3FED2D006E32F2 = {
 			isa = PBXGroup;
 			children = (
@@ -61,6 +68,7 @@
 			children = (
 				3C65E6F12D3FED3C006E32F2 /* MeDeX_for_iOSApp.swift */,
 				3C65E6F02D3FED3C006E32F2 /* ContentView.swift */,
+				3C04D6F92D46336900041AA6 /* Data Models */,
 				3C65E6EF2D3FED3C006E32F2 /* Assets.xcassets */,
 				3C65E6EE2D3FED3C006E32F2 /* Preview Content */,
 			);
