@@ -13,10 +13,12 @@ class Doctor_Data{
     var id: String
     var UserName: String
     var Password: String
+    var RegisteredDate: Date
     
-    init(id: String, UserName: String, Password: String) {
+    init(id: String, UserName: String, Password: String, RegisteredDate: Date) {
         self.id = UUID().uuidString
         self.UserName = UserName
         self.Password = Password
+        self.RegisteredDate = RegisteredDate
     }
 }

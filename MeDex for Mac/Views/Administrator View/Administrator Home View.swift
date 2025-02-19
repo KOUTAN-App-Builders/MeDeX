@@ -14,13 +14,42 @@ struct Administrator_Home_View: View {
     
     var body: some View {
         VStack{
-            Text("Welcome, \(AdminName)!")
-                .font(.title)
-                .bold()
-            if SelectedUI == .DoctorDataList{
-                
+            HStack{
+                Text("Welcome, \(AdminName)!")
+                    .font(.title)
+                    .bold()
+                Spacer()
+                NavigationLink {
+                    Administrator_Login_View()
+                        .navigationBarBackButtonHidden()
+                } label: {
+                    Text("Logout")
+                        .frame(width: 100, height: 30)
+                        .background(Color.accentColor)
+                        .foregroundStyle(Color.white)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                }
+            }
+            Picker("", selection: $SelectedUI){
+                Text("Doctor Data List").tag(UISelector.DoctorDataList)
+                Text("Patient Data List").tag(UISelector.PatientDataList)
+                Text("Network Settings").tag(UISelector.NetworkSettings)
+                Text("Admin Manager").tag(UISelector.AdminManager)
+            }
+            .pickerStyle(SegmentedPickerStyle())
+            Divider()
+            switch SelectedUI{
+            case .DoctorDataList:
+                Doctor_Data_List_View()
+            case .PatientDataList:
+                Patient_Data_List_View()
+            case .NetworkSettings:
+                Network_Settings_View()
+            case .AdminManager:
+                Admin_Manager_View()
             }
         }
+        .padding()
     }
 }
 

@@ -17,9 +17,11 @@ class Patient_Data{
     var BloodType: String
     var Height: Double
     var Weight: Double
+    var PreviousIllnesses: String?
     @Relationship var ClinicalRecord: [Patient_Clinical_Record]?
+    var finalUpdatedDate: Date
     
-    init(id: String, Name: String, Age: Int, Sex: String, BloodType: String, Height: Double, Weight: Double, ClinicalRecord: [Patient_Clinical_Record]? = []) {
+    init(id: String, Name: String, Age: Int, Sex: String, BloodType: String, Height: Double, Weight: Double,PreviousIllnesses: String, ClinicalRecord: [Patient_Clinical_Record]? = [], finalUpdatedDate: Date) {
         self.id = UUID().uuidString
         self.Name = Name
         self.Age = Age
@@ -27,6 +29,8 @@ class Patient_Data{
         self.BloodType = BloodType
         self.Height = Height
         self.Weight = Weight
+        self.PreviousIllnesses = PreviousIllnesses
         self.ClinicalRecord = ClinicalRecord
+        self.finalUpdatedDate = finalUpdatedDate
     }
 }
