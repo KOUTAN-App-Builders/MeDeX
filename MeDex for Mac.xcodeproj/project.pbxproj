@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C04D6F22D4630FF00041AA6 /* Administrator Data Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C04D6F12D4630FF00041AA6 /* Administrator Data Model.swift */; };
+		3C04D6F42D46323D00041AA6 /* Doctor Data Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C04D6F32D46323D00041AA6 /* Doctor Data Model.swift */; };
+		3C04D6F62D46327D00041AA6 /* Patient Data Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C04D6F52D46327D00041AA6 /* Patient Data Model.swift */; };
+		3C04D6F82D46330C00041AA6 /* Patient Clinical Record Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C04D6F72D46330C00041AA6 /* Patient Clinical Record Model.swift */; };
 		3C07D7532D439FBA0048C2FC /* Administrator Home View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C07D7522D439FBA0048C2FC /* Administrator Home View.swift */; };
 		3C3FB7572D41419F001FC995 /* Welcome View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3FB7562D41419F001FC995 /* Welcome View.swift */; };
 		3C3FB7592D41421A001FC995 /* Administrator Setup View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3FB7582D41421A001FC995 /* Administrator Setup View.swift */; };
@@ -20,6 +24,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C04D6F12D4630FF00041AA6 /* Administrator Data Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Administrator Data Model.swift"; sourceTree = "<group>"; };
+		3C04D6F32D46323D00041AA6 /* Doctor Data Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Doctor Data Model.swift"; sourceTree = "<group>"; };
+		3C04D6F52D46327D00041AA6 /* Patient Data Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Patient Data Model.swift"; sourceTree = "<group>"; };
+		3C04D6F72D46330C00041AA6 /* Patient Clinical Record Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Patient Clinical Record Model.swift"; sourceTree = "<group>"; };
 		3C07D7522D439FBA0048C2FC /* Administrator Home View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Administrator Home View.swift"; sourceTree = "<group>"; };
 		3C3FB7562D41419F001FC995 /* Welcome View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Welcome View.swift"; sourceTree = "<group>"; };
 		3C3FB7582D41421A001FC995 /* Administrator Setup View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Administrator Setup View.swift"; sourceTree = "<group>"; };
@@ -45,6 +53,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C04D6EF2D46307F00041AA6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3C3FB7552D414186001FC995 /* Setup View */,
+				3CE922322D3F8F9600E0F967 /* Administrator View */,
+				3CE922342D3F900C00E0F967 /* Doctor View */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3C04D6F02D4630CB00041AA6 /* Data Models */ = {
+			isa = PBXGroup;
+			children = (
+				3C04D6F12D4630FF00041AA6 /* Administrator Data Model.swift */,
+				3C04D6F32D46323D00041AA6 /* Doctor Data Model.swift */,
+				3C04D6F52D46327D00041AA6 /* Patient Data Model.swift */,
+				3C04D6F72D46330C00041AA6 /* Patient Clinical Record Model.swift */,
+			);
+			path = "Data Models";
+			sourceTree = "<group>";
+		};
 		3C3FB7552D414186001FC995 /* Setup View */ = {
 			isa = PBXGroup;
 			children = (
@@ -85,9 +114,8 @@
 				3CBE78322D3E4CB800021743 /* MeDex_for_MacApp.swift */,
 				3CBE78312D3E4CB800021743 /* MeDex_for_Mac.entitlements */,
 				3CBE78302D3E4CB800021743 /* ContentView.swift */,
-				3C3FB7552D414186001FC995 /* Setup View */,
-				3CE922322D3F8F9600E0F967 /* Administrator View */,
-				3CE922342D3F900C00E0F967 /* Doctor View */,
+				3C04D6EF2D46307F00041AA6 /* Views */,
+				3C04D6F02D4630CB00041AA6 /* Data Models */,
 				3CBE782F2D3E4CB800021743 /* Assets.xcassets */,
 				3CBE782E2D3E4CB800021743 /* Preview Content */,
 			);
@@ -189,10 +217,14 @@
 			files = (
 				3CBE78342D3E4CB800021743 /* ContentView.swift in Sources */,
 				3CE142072D42935A006BDCF7 /* Basic Instructions View.swift in Sources */,
+				3C04D6F82D46330C00041AA6 /* Patient Clinical Record Model.swift in Sources */,
+				3C04D6F22D4630FF00041AA6 /* Administrator Data Model.swift in Sources */,
 				3CE922332D3F8F9600E0F967 /* Administrator Login View.swift in Sources */,
+				3C04D6F42D46323D00041AA6 /* Doctor Data Model.swift in Sources */,
 				3C3FB7592D41421A001FC995 /* Administrator Setup View.swift in Sources */,
 				3C3FB7572D41419F001FC995 /* Welcome View.swift in Sources */,
 				3C07D7532D439FBA0048C2FC /* Administrator Home View.swift in Sources */,
+				3C04D6F62D46327D00041AA6 /* Patient Data Model.swift in Sources */,
 				3CBE78352D3E4CB800021743 /* MeDex_for_MacApp.swift in Sources */,
 				3CE922362D3F903300E0F967 /* Doctor Login View.swift in Sources */,
 			);

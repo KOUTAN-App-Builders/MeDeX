@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct MeDex_for_MacApp: App {
@@ -21,6 +22,7 @@ struct MeDex_for_MacApp: App {
                     ContentView()
                 }
             }
+            .modelContainer(for: [Administrator_Data.self, Doctor_Data.self, Patient_Data.self, Patient_Clinical_Record.self])
         }
     }
 }
