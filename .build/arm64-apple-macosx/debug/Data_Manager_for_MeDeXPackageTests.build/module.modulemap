@@ -1,0 +1,4 @@
+module Data_Manager_for_MeDeXPackageTests {
+    header "/Volumes/Koutan SSD/Xcode/Data Manager for MeDeX/.build/arm64-apple-macosx/debug/Data_Manager_for_MeDeXPackageTests.build/Data Manager for MeDeXPackageTests-Swift.h"
+    requires objc
+}
