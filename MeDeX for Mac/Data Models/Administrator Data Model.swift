@@ -10,12 +10,12 @@ import SwiftData
 
 @Model
 class Administrator_Data{
-    var id: String
+    var id: UUID
     var UserName: String
     var Password: String
     
-    init(id: String, UserName: String, Password: String) {
-        self.id = UUID().uuidString
+    init(UserName: String, Password: String) {
+        self.id = UUID()
         self.UserName = UserName
         self.Password = Password
     }

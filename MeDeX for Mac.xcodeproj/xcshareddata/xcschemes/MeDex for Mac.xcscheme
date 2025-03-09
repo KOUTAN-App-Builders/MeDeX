@@ -18,7 +18,7 @@
                BlueprintIdentifier = "3CBE781A2D3E4B8A00021743"
                BuildableName = "MeDeX for Mac.app"
                BlueprintName = "MeDeX for Mac"
-               ReferencedContainer = "container:MeDex for Mac.xcodeproj">
+               ReferencedContainer = "container:MeDeX for Mac.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,7 +47,7 @@
             BlueprintIdentifier = "3CBE781A2D3E4B8A00021743"
             BuildableName = "MeDeX for Mac.app"
             BlueprintName = "MeDeX for Mac"
-            ReferencedContainer = "container:MeDex for Mac.xcodeproj">
+            ReferencedContainer = "container:MeDeX for Mac.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -64,7 +64,7 @@
             BlueprintIdentifier = "3CBE781A2D3E4B8A00021743"
             BuildableName = "MeDeX for Mac.app"
             BlueprintName = "MeDeX for Mac"
-            ReferencedContainer = "container:MeDex for Mac.xcodeproj">
+            ReferencedContainer = "container:MeDeX for Mac.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

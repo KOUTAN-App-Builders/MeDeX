@@ -10,13 +10,13 @@ import SwiftData
 
 @Model
 class Doctor_Data{
-    var id: String
+    var id: UUID
     var UserName: String
     var Password: String
     var RegisteredDate: Date
     
-    init(id: String, UserName: String, Password: String, RegisteredDate: Date) {
-        self.id = UUID().uuidString
+    init(UserName: String, Password: String, RegisteredDate: Date) {
+        self.id = UUID()
         self.UserName = UserName
         self.Password = Password
         self.RegisteredDate = RegisteredDate

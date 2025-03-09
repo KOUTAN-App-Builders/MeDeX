@@ -26,7 +26,7 @@ struct Administrator_Login_View: View {
                 .frame(width: 300)
                 .clipShape(RoundedRectangle(cornerRadius: 10))
             NavigationLink {
-                Administrator_Home_View()
+                Administrator_Home_View(AdminName: Username)
                     .navigationBarBackButtonHidden()
             } label: {
                 Text("Login")
@@ -36,7 +36,11 @@ struct Administrator_Login_View: View {
                     .clipShape(RoundedRectangle(cornerRadius: 10))
                     .padding()
             }
-
+            NavigationLink {
+                ContentView()
+            } label: {
+                Text("Click here to return to the main page.")
+            }
         }
         .padding()
     }

@@ -10,21 +10,23 @@ import SwiftData
 
 @Model
 class Patient_Clinical_Record{
-    var id: String
+    var id: UUID
     var Date: Date
-    var Doctor: String
+    var ClinicalDepartment: Clinical_Department_Data_Model
+    var Doctor: Doctor_Data
     var Diagnosis: String
     var Symptoms: String
     var ExaminationData: String?
-    var Medication: String
+    var Prescription: String
     
-    init(id: String, Date: Date, Doctor: String, Diagnosis: String, Symptoms: String, ExaminationData: String? = nil, Medication: String) {
-        self.id = UUID().uuidString
+    init(Date: Date,ClinicalDepartment: Clinical_Department_Data_Model, Doctor: Doctor_Data, Diagnosis: String, Symptoms: String, ExaminationData: String? = nil, Prescription: String) {
+        self.id = UUID()
         self.Date = Date
+        self.ClinicalDepartment = ClinicalDepartment
         self.Doctor = Doctor
         self.Diagnosis = Diagnosis
         self.Symptoms = Symptoms
         self.ExaminationData = ExaminationData
-        self.Medication = Medication
+        self.Prescription = Prescription
     }
 }

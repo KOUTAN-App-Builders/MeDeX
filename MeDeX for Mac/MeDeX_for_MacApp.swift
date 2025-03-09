@@ -17,12 +17,12 @@ struct MeDeX_for_MacApp: App {
         WindowGroup {
             NavigationStack{
                 if isFirstLaunch{
-                    Welcome_View()
+                    ContentView()
                 }else{
                     ContentView()
                 }
             }
-            .modelContainer(for: [Administrator_Data.self, Doctor_Data.self, Patient_Data.self, Patient_Clinical_Record.self])
+            .modelContainer(for: [Administrator_Data.self, Doctor_Data.self, Patient_Data.self, Patient_Clinical_Record.self,Patient_Appointment_Data_Model.self])
         }
     }
 }

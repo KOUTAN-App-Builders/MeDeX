@@ -6,10 +6,13 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct Administrator_Home_View: View {
     
-    @State private var AdminName: String = ""
+    @Query private var Departments: [Clinical_Department_Data_Model]
+    @Environment(\.modelContext) var Context
+    let AdminName: String
     @State var SelectedUI: UISelector = .DoctorDataList
     
     var body: some View {
@@ -33,6 +36,7 @@ struct Administrator_Home_View: View {
             Picker("", selection: $SelectedUI){
                 Text("Doctor Data List").tag(UISelector.DoctorDataList)
                 Text("Patient Data List").tag(UISelector.PatientDataList)
+                Text("Departments List").tag(UISelector.DepartmentList)
                 Text("Network Settings").tag(UISelector.NetworkSettings)
                 Text("Admin Manager").tag(UISelector.AdminManager)
             }
@@ -43,6 +47,13 @@ struct Administrator_Home_View: View {
                 Doctor_Data_List_View()
             case .PatientDataList:
                 Patient_Data_List_View()
+            case .DepartmentList:
+                Department_Manager_View()
+                    .task {
+                        if Departments.isEmpty{
+                            await addDefaultDepartments()
+                        }
+                    }
             case .NetworkSettings:
                 Network_Settings_View()
             case .AdminManager:
@@ -51,15 +62,35 @@ struct Administrator_Home_View: View {
         }
         .padding()
     }
+    private func addDefaultDepartments() async{
+        let defaultDepartments = [
+            Clinical_Department_Data_Model(id: UUID(), DepartmentName: "Internal Medicine"),
+            Clinical_Department_Data_Model(id: UUID(), DepartmentName: "General Surgery"),
+            Clinical_Department_Data_Model(id: UUID(), DepartmentName: "General Practice"),
+            Clinical_Department_Data_Model(id: UUID(), DepartmentName: "Emergency Room"),
+            Clinical_Department_Data_Model(id: UUID(), DepartmentName: "Radiology")
+        ]
+        for department in defaultDepartments {
+            Context.insert(department)
+        }
+        do{
+            try Context.save()
+        }catch{
+            print("failed to save default Departments. Error: \(error)")
+        }
+    }
 }
 
 enum UISelector: Int{
     case DoctorDataList = 0
     case PatientDataList = 1
-    case NetworkSettings = 2
-    case AdminManager = 3
+    case DepartmentList = 2
+    case NetworkSettings = 3
+    case AdminManager = 4
 }
 
 #Preview {
-    Administrator_Home_View()
+    NavigationStack{
+        Administrator_Home_View(AdminName: "Admin")
+    }
 }
