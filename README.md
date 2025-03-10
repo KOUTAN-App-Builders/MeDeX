@@ -14,13 +14,13 @@
 #### **The Swift Package Branch presented in the third link is depricated and is not currently in use. Functionalities created in this package is currently being transfered to each project (macOS & iOS).**
 
 ## **(Links to the README File for each Project: All English)**
-### Click [here](#/MeDeX Main Branch Folder/README_Files_for_Mac_App/README_for_Mac_App.EN.md) to access the README file for the Mac App.
-### Click [here](#/MeDeX Main Branch Folder/README_Files_for_iOS_App/README_for_iOS_App.EN.md) to access the README file for the iOS App.
+### Click [here](/MeDeX Main Branch Folder/README_Files_for_Mac_App/README_for_Mac_App.EN.md) to access the README file for the Mac App.
+### Click [here](/MeDeX Main Branch Folder/README_Files_for_iOS_App/README_for_iOS_App.EN.md) to access the README file for the iOS App.
 ### **Haven't made a README file for the Swift Package Data Manager since it is deprecated.**
 
 ## **(README Files Provided in Other Languages)**
-### Click here for [English](#/MeDeX Main Branch Folder/README.EN.md).
-### Click here for [日本語](#/MeDeX Main Branch Folder/README.JA.md).  -- 日本語版は未作成です。
+### Click here for [English](/MeDeX Main Branch Folder/README.EN.md).
+### Click here for [日本語](/MeDeX Main Branch Folder/README.JA.md).  -- 日本語版は未作成です。
 
 ## **(Big Thanks to:)
 
