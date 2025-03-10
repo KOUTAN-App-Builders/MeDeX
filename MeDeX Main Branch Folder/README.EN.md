@@ -13,8 +13,8 @@
 #### **The Swift Package Branch presented in the third link is depricated and is not currently in use. Functionalities created in this package is currently being transfered to each project (macOS & iOS).**
 
 ## **(Links to the README File for each Project)**
-### Click [here](#README_Files_for_Mac_App/README_for_Mac_App.EN.md) to access the README file for the Mac App.
-### Click [here](#README_Files_for_iOS_App/README_for_iOS_App.EN.md) to access the README file for the iOS App.
+### Click [here](https://github.com/KOUTAN-App-Builders/MeDeX/blob/main/MeDeX%20Main%20Branch%20Folder/README%20Files%20for%20Mac%20App/README%20for%20Mac%20App.EN.md) to access the README file for the Mac App.
+### Click [here](https://github.com/KOUTAN-App-Builders/MeDeX/blob/main/MeDeX%20Main%20Branch%20Folder/README%20Files%20for%20iOS%20App/README%20for%20iOS%20App.EN.md) to access the README file for the iOS App.
 ### **Haven't made a README file for the Swift Package Data Manager since it is deprecated.**
 
 ## **(Big Thanks to:)
