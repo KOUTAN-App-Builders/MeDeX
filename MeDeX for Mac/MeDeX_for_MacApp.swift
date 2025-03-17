@@ -17,7 +17,7 @@ struct MeDeX_for_MacApp: App {
         WindowGroup {
             NavigationStack{
                 if isFirstLaunch{
-                    ContentView()
+                    Welcome_View()
                 }else{
                     ContentView()
                 }

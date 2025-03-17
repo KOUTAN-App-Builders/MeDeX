@@ -13,12 +13,14 @@ class Doctor_Data{
     var id: UUID
     var UserName: String
     var Password: String
+    var ClinicalDepartment: [Clinical_Department_Data_Model]
     var RegisteredDate: Date
     
-    init(UserName: String, Password: String, RegisteredDate: Date) {
+    init(UserName: String, Password: String, ClinicalDepartment: [Clinical_Department_Data_Model],RegisteredDate: Date) {
         self.id = UUID()
         self.UserName = UserName
         self.Password = Password
+        self.ClinicalDepartment = ClinicalDepartment
         self.RegisteredDate = RegisteredDate
     }
 }

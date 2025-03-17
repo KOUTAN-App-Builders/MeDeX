@@ -53,6 +53,8 @@ enum DoctorViewSelector: Int{
     case Patient_Full_List = 1
 }
 
-#Preview {
-    Doctor_Home_View(DoctorName: "")
+#Preview(traits: .sampleData) {
+    NavigationStack{
+        Doctor_Home_View(DoctorName: "")
+    }
 }

@@ -6,46 +6,68 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct Administrator_Login_View: View {
     
+    @Query private var AdminData: [Administrator_Data]
+    @Environment(\.modelContext) var Context
     @State private var Username: String = ""
     @State private var Password: String = ""
+    @State private var loginSuccess: Administrator_Data? = nil
+    @State private var loginError: Bool = false
     
     var body: some View {
-        VStack{
-            Text("Administrator Login")
-                .font(.title)
-                .bold()
-            Text("Please enter the administrator username and password.")
-                .font(.title3)
-            TextField("Username", text: $Username)
-                .frame(width: 300)
-                .clipShape(RoundedRectangle(cornerRadius: 10))
-            SecureField("Password", text: $Password)
-                .frame(width: 300)
-                .clipShape(RoundedRectangle(cornerRadius: 10))
-            NavigationLink {
-                Administrator_Home_View(AdminName: Username)
-                    .navigationBarBackButtonHidden()
-            } label: {
-                Text("Login")
-                    .frame(width: 200, height: 30)
-                    .background(Color.accentColor)
-                    .foregroundStyle(Color.white)
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                    .padding()
+        NavigationStack {
+            VStack{
+                Text("Administrator Login")
+                    .font(.title)
+                    .bold()
+                Text("Please enter the administrator username and password.")
+                    .font(.title3)
+                TextField("Username", text: $Username)
+                    .frame(width: 300)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                SecureField("Password", text: $Password)
+                    .frame(width: 300)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                Button {
+                    Login()
+                } label: {
+                    Text("Login")
+                        .frame(width: 200, height: 30)
+                        .background(Color.accentColor)
+                        .foregroundStyle(Color.white)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .padding()
+                }
+                if loginError {
+                    Text("Invalid username or password.")
+                }
+                NavigationLink {
+                    ContentView()
+                } label: {
+                    Text("Click here to return to the main page.")
+                }
             }
-            NavigationLink {
-                ContentView()
-            } label: {
-                Text("Click here to return to the main page.")
+            .padding()
+            .navigationDestination(item: $loginSuccess) { admin in
+                Administrator_Home_View(AdminName: admin.UserName)
+                    .navigationBarBackButtonHidden()
             }
         }
-        .padding()
+    }
+    private func Login(){
+        if let user = AdminData.first(where: { $0.UserName == Username && $0.Password == Password }) {
+            loginSuccess = user
+        }else{
+            loginError = true
+        }
     }
 }
 
-#Preview {
-    Administrator_Login_View()
+#Preview(traits: .sampleData) {
+    NavigationStack{
+        Administrator_Login_View()
+    }
 }

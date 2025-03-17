@@ -64,6 +64,8 @@ struct Doctor_Data_Creation_View: View {
     }
 }
 
-#Preview{
-    Doctor_Data_List_View()
+#Preview(traits: .sampleData){
+    NavigationStack{
+        Doctor_Data_List_View()
+    }
 }

@@ -150,7 +150,7 @@ struct Edit_Department_View: View {
     }
 }
 
-#Preview {
+#Preview(traits: .sampleData) {
     NavigationStack{
         Department_Manager_View()
     }

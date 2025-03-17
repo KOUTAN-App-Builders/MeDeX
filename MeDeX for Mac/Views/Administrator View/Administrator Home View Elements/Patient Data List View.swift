@@ -38,6 +38,8 @@ struct Patient_Data_List_View: View {
     }
 }
 
-#Preview {
-    Patient_Data_List_View()
+#Preview(traits: .sampleData) {
+    NavigationStack{
+        Patient_Data_List_View()
+    }
 }

@@ -24,6 +24,8 @@ struct Full_Patient_List_View: View {
     }
 }
 
-#Preview {
-    Full_Patient_List_View()
+#Preview(traits: .sampleData) {
+    NavigationStack{
+        Full_Patient_List_View()
+    }
 }

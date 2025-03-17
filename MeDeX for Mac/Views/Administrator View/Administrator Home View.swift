@@ -34,19 +34,15 @@ struct Administrator_Home_View: View {
                 }
             }
             Picker("", selection: $SelectedUI){
+                Text("Departments List").tag(UISelector.DepartmentList)
                 Text("Doctor Data List").tag(UISelector.DoctorDataList)
                 Text("Patient Data List").tag(UISelector.PatientDataList)
-                Text("Departments List").tag(UISelector.DepartmentList)
                 Text("Network Settings").tag(UISelector.NetworkSettings)
                 Text("Admin Manager").tag(UISelector.AdminManager)
             }
             .pickerStyle(SegmentedPickerStyle())
             Divider()
             switch SelectedUI{
-            case .DoctorDataList:
-                Doctor_Data_List_View()
-            case .PatientDataList:
-                Patient_Data_List_View()
             case .DepartmentList:
                 Department_Manager_View()
                     .task {
@@ -54,6 +50,11 @@ struct Administrator_Home_View: View {
                             await addDefaultDepartments()
                         }
                     }
+            case .DoctorDataList:
+                Doctor_Data_List_View()
+            case .PatientDataList:
+                Patient_Data_List_View()
+                
             case .NetworkSettings:
                 Network_Settings_View()
             case .AdminManager:
@@ -82,14 +83,14 @@ struct Administrator_Home_View: View {
 }
 
 enum UISelector: Int{
-    case DoctorDataList = 0
-    case PatientDataList = 1
-    case DepartmentList = 2
+    case DepartmentList = 0
+    case DoctorDataList = 1
+    case PatientDataList = 2
     case NetworkSettings = 3
     case AdminManager = 4
 }
 
-#Preview {
+#Preview(traits: .sampleData) {
     NavigationStack{
         Administrator_Home_View(AdminName: "Admin")
     }

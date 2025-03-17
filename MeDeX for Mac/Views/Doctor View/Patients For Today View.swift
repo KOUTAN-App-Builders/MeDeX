@@ -17,6 +17,8 @@ struct Patients_For_Today_View: View {
     }
 }
 
-#Preview {
-    Patients_For_Today_View()
+#Preview(traits: .sampleData) {
+    NavigationStack{
+        Patients_For_Today_View()
+    }
 }

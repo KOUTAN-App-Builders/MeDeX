@@ -13,6 +13,8 @@ struct Admin_Manager_View: View {
     }
 }
 
-#Preview {
-    Admin_Manager_View()
+#Preview(traits: .sampleData) {
+    NavigationStack{
+        Admin_Manager_View()
+    }
 }
