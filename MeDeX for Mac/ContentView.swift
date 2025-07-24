@@ -39,6 +39,8 @@ struct ContentView: View {
     }
 }
 
-#Preview {
-    ContentView()
+#Preview(traits: .sampleData) {
+    NavigationStack{
+        ContentView()
+    }
 }

@@ -40,7 +40,7 @@ struct Patient_Detail_View: View {
                             .frame(height: 60)
                         VStack{
                             if patient.PreviousIllnesses != nil{
-                                Text("Previous Illnesses: \(String(describing: patient.PreviousIllnesses))")
+                                Text("Previous Illnesses: \(patient.PreviousIllnesses!)")
                             }else{
                                 Text("Previous Illnesses: None")
                             }
@@ -53,11 +53,10 @@ struct Patient_Detail_View: View {
                         HStack{
                             Spacer()
                             NavigationLink {
-                                
+                                New_Record_Entry_View(patient: patient)
                             } label: {
                                 Image(systemName: "plus")
                             }
-
                         }
                         List(patient.ClinicalRecord ?? [], id: \.id){ record in
                             VStack{

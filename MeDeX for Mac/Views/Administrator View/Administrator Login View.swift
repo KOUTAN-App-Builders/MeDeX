@@ -52,7 +52,7 @@ struct Administrator_Login_View: View {
             }
             .padding()
             .navigationDestination(item: $loginSuccess) { admin in
-                Administrator_Home_View(AdminName: admin.UserName)
+                Administrator_Home_View(Admin: admin)
                     .navigationBarBackButtonHidden()
             }
         }

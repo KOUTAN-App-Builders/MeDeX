@@ -12,13 +12,13 @@ struct Administrator_Home_View: View {
     
     @Query private var Departments: [Clinical_Department_Data_Model]
     @Environment(\.modelContext) var Context
-    let AdminName: String
+    @Bindable var Admin: Administrator_Data
     @State var SelectedUI: UISelector = .DoctorDataList
     
     var body: some View {
         VStack{
             HStack{
-                Text("Welcome, \(AdminName)!")
+                Text("Welcome, \(Admin.UserName)!")
                     .font(.title)
                     .bold()
                 Spacer()
@@ -92,6 +92,6 @@ enum UISelector: Int{
 
 #Preview(traits: .sampleData) {
     NavigationStack{
-        Administrator_Home_View(AdminName: "Admin")
+        Administrator_Home_View(Admin: Administrator_Data(UserName: "Admin", Password: "SecurePassword123"))
     }
 }

@@ -46,6 +46,6 @@ struct New_Record_Entry_View: View {
     }
 }
 
-#Preview {
+#Preview(traits: .sampleData) {
     New_Record_Entry_View(patient: Patient_Data(Name: "George Smith", Age: 45, Sex: "male", BloodType: "AB", Height: 170.5, Weight: 65.5, PreviousIllnesses: "", finalUpdatedDate: Date()))
 }

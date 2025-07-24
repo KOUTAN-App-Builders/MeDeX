@@ -24,8 +24,6 @@ struct Department_Manager_View: View {
             }
             ZStack{
                 List(Departments){ Department in
-                    Text("Departments aren't created yet.")
-                        .font(.title)
                     NavigationLink {
                         Edit_Department_View(Department: Department)
                     } label: {
