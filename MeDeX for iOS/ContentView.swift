@@ -9,11 +9,27 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        HStack {
+            NavigationLink {
+                Doctor_Login_View()
+            } label: {
+                Text("Doctor Login")
+                    .frame(width: 300, height: 55)
+                    .background(Color.accentColor)
+                    .foregroundStyle(Color.white)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                    .padding()
+            }
+            NavigationLink {
+                Patient_Login_View()
+            } label: {
+                Text("Patient Login")
+                    .frame(width: 300, height: 55)
+                    .background(Color.accentColor)
+                    .foregroundStyle(Color.white)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                    .padding()
+            }
         }
         .padding()
     }
