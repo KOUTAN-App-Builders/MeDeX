@@ -16,7 +16,7 @@ class Doctor_Data{
     var ClinicalDepartment: [Clinical_Department_Data_Model]
     var RegisteredDate: Date
     
-    init(UserName: String, Password: String, ClinicalDepartment: [Clinical_Department_Data_Model],RegisteredDate: Date) {
+    init(UserName: String, Password: String, ClinicalDepartment: [Clinical_Department_Data_Model] ,RegisteredDate: Date) {
         self.id = UUID()
         self.UserName = UserName
         self.Password = Password

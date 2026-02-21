@@ -45,11 +45,11 @@ struct Administrator_Home_View: View {
             switch SelectedUI{
             case .DepartmentList:
                 Department_Manager_View()
-                    .task {
+                    /*.task {
                         if Departments.isEmpty{
                             await addDefaultDepartments()
                         }
-                    }
+                    }*/
             case .DoctorDataList:
                 Doctor_Data_List_View()
             case .PatientDataList:
@@ -63,7 +63,7 @@ struct Administrator_Home_View: View {
         }
         .padding()
     }
-    private func addDefaultDepartments() async{
+    /*private func addDefaultDepartments() async{
         let defaultDepartments = [
             Clinical_Department_Data_Model(id: UUID(), DepartmentName: "Internal Medicine"),
             Clinical_Department_Data_Model(id: UUID(), DepartmentName: "General Surgery"),
@@ -79,7 +79,7 @@ struct Administrator_Home_View: View {
         }catch{
             print("failed to save default Departments. Error: \(error)")
         }
-    }
+    }*/
 }
 
 enum UISelector: Int{

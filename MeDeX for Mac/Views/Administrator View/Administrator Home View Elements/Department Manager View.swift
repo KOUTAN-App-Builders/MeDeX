@@ -52,7 +52,7 @@ struct Add_Department_View: View {
         VStack{
             HStack{
                 Text("Add New Department")
-                    .font(.largeTitle)
+                    .font(.title)
                     .bold()
                 Spacer()
             }
@@ -61,6 +61,7 @@ struct Add_Department_View: View {
                 .frame(width: 300)
                 .background(Color.black.opacity(0.05))
                 .clipShape(RoundedRectangle(cornerRadius: 10))
+                .border(Color.black, width: 1)
             if NewDepartmentName != ""{
                 Button {
                     addNewDepartment()
@@ -111,6 +112,7 @@ struct Edit_Department_View: View {
             HStack{
                 Text("Change or Delete Department")
                     .font(.title)
+                    .bold()
                 Spacer()
             }
             Spacer()
@@ -118,6 +120,7 @@ struct Edit_Department_View: View {
                 .frame(width: 300)
                 .background(Color.black.opacity(0.05))
                 .clipShape(RoundedRectangle(cornerRadius: 10))
+                .border(Color.black, width: 1)
                 .padding()
             Button {
                 saveDepartmentData()

@@ -14,27 +14,57 @@ struct Patient_Data_List_View: View {
     @Environment(\.modelContext)var Context
     
     var body: some View {
-        ZStack{
-            List(PatientData){ Patient in
-                NavigationLink{
-                    Doctor_Data_Detail_View()
-                }label:{
-                    VStack{
-                        Text(Patient.Name)
-                            .font(.title)
-                            .bold()
-                        Text("Last Updated: \(Patient.finalUpdatedDate, style: .date)")
-                            .font(.caption)
-                    }
-                    .padding()
+        VStack{
+            HStack{
+                Spacer()
+                NavigationLink {
+                    Patient_Data_Creation_View()
+                } label: {
+                    Image(systemName: "plus")
                 }
             }
-            if PatientData.isEmpty{
-                Text("Patient Data is not added yet.")
-                    .font(.title)
-                    .bold()
+            ZStack{
+                List(PatientData){ Patient in
+                    NavigationLink{
+                        Patient_Data_Detail_View()
+                    }label:{
+                        VStack{
+                            Text(Patient.Name)
+                                .font(.title)
+                                .bold()
+                            Text("Last Updated: \(Patient.finalUpdatedDate, style: .date)")
+                                .font(.caption)
+                        }
+                        .padding()
+                    }
+                }
+                if PatientData.isEmpty{
+                    Text("Patient Data is not added yet.")
+                        .font(.title)
+                        .bold()
+                }
             }
         }
+    }
+}
+
+struct Patient_Data_Detail_View: View {
+    
+    @Query private var PatientData: [Patient_Data]
+    
+    var body: some View {
+        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Hello, world!@*/Text("Hello, world!")/*@END_MENU_TOKEN@*/
+    }
+}
+
+
+struct Patient_Data_Creation_View: View {
+    
+    @Query private var PatientData: [Patient_Data]
+    @Environment(\.modelContext)var Context
+    
+    var body: some View {
+        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Hello, world!@*/Text("Hello, world!")/*@END_MENU_TOKEN@*/
     }
 }
 

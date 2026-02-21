@@ -21,10 +21,20 @@ struct SampleDataModifier: PreviewModifier {
             let doctor = Doctor_Data(UserName: "Jason Smith", Password: "ExamplePassword", ClinicalDepartment: [Clinical_Department_Data_Model(id: UUID(), DepartmentName: "Neurology")], RegisteredDate: Date())
             let patient1 = Patient_Data(Name: "John Doe", Age: 45, Sex: "Male", BloodType: "A", Height: 173.1, Weight: 72.3, PreviousIllnesses: "None", finalUpdatedDate: Date())
             let patient2 = Patient_Data(Name: "Jame Smith", Age: 29, Sex: "Female", BloodType: "AB", Height: 156.7, Weight: 56.3, PreviousIllnesses: "Anaphylacxie Shock", finalUpdatedDate: Date())
+            let department1 = Clinical_Department_Data_Model(id: UUID(), DepartmentName: "Otolaryngology")
+            let department2 = Clinical_Department_Data_Model(id: UUID(), DepartmentName: "Ophthalmology")
+            let department3 = Clinical_Department_Data_Model(id: UUID(), DepartmentName: "Dermatology")
+            let department4 = Clinical_Department_Data_Model(id: UUID(), DepartmentName: "Surgery")
+            let department5 = Clinical_Department_Data_Model(id: UUID(), DepartmentName: "Internal Medicine")
             context.insert(admin)
             context.insert(doctor)
             context.insert(patient1)
             context.insert(patient2)
+            context.insert(department1)
+            context.insert(department2)
+            context.insert(department3)
+            context.insert(department4)
+            context.insert(department5)
             
             // Attaching the ModelContainer to the content view.
         return previewContainer
