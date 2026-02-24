@@ -69,7 +69,7 @@ struct Network_Setup_View: View {
             Divider()
             HStack{
                 Button {
-                    
+                    connectionAvailability.toggle()
                 } label: {
                     Text("Click here to check the connectivity")
                 }

@@ -14,18 +14,41 @@ struct Basic_Instructions_View: View {
                 .font(.title)
                 .bold()
                 .padding(.trailing)
-            HStack{
-                Image(systemName: "person.badge.shield.checkmark.fill")
-                    .imageScale(.large)
-                    .foregroundStyle(.accent)
-                Text("Administrator set up is complete.")
-                    .font(.title3)
-                    .bold()
-                    .padding(.trailing)
-            }
             Text("Continue further setup by clicking the button below")
             Text("and logging in from the administrator login page.")
             
+            Text("What you can do in the Admin page")
+                .font(.headline)
+            VStack{
+                HStack{
+                    Image(systemName: "stethoscope")
+                    VStack{
+                        Text("Adding Clinical Departments")
+                            .font(.subheadline)
+                            .padding(.trailing, 45)
+                            .bold()
+                        Text("You can add clinical departments")
+                        Text("tailored to your hospital.")
+                            .padding(.trailing, 50)
+                    }
+                }
+                HStack{
+                    Image(systemName: "person.badge.plus")
+                    VStack{
+                        Text("Adding Doctors")
+                            .font(.subheadline)
+                            .bold()
+                            .padding(.trailing, 83)
+                        Text("You can add doctors in your")
+                        Text("hospital to the system.")
+                            .padding(.trailing, 28)
+                    }
+                }
+                HStack{
+                    
+                }
+            }
+            .padding(.trailing, 80)
             NavigationLink {
                 ContentView()
             } label: {
@@ -35,8 +58,8 @@ struct Basic_Instructions_View: View {
                     .foregroundStyle(Color.white)
                     .clipShape(RoundedRectangle(cornerRadius: 10))
             }
-
         }
+        .padding()
     }
 }
 

@@ -22,7 +22,7 @@ struct MeDeX_for_MacApp: App {
                     ContentView()
                 }
             }
-            .modelContainer(for: [Administrator_Data.self, Doctor_Data.self, Patient_Data.self, Patient_Clinical_Record.self,Patient_Appointment_Data_Model.self])
+            .modelContainer(for: [Administrator_Data.self, Doctor_Data.self, Patient_Data.self, Patient_Clinical_Record.self,Patient_Appointment_Data_Model.self,Clinical_Department_Data_Model.self,Prescription_Data_Model.self,Medication_Detail_Data_Model.self])
         }
     }
 }

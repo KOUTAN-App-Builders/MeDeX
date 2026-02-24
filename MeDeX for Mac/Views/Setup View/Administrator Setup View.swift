@@ -34,7 +34,7 @@ struct Administrator_Setup_View: View {
                 .frame(width: 300)
                 .clipShape(RoundedRectangle(cornerRadius: 10))
             NavigationLink {
-                Basic_Instructions_View()
+                Network_Setup_View()
             } label: {
                 Text("Complete Administrator Setup")
                     .frame(width: 200, height: 30)

@@ -16,10 +16,14 @@ struct Full_Patient_List_View: View {
     
     var body: some View {
         List(filteredPatients(patients: PatientData, searchName: searchName)){ patient in
-            VStack {
-                Text(patient.Name)
-                    .font(.title)
-                Text("Last visit: ")
+            NavigationLink{
+                Patient_Detail_View(patient: patient)
+            }label: {
+                VStack {
+                    Text(patient.Name)
+                        .font(.title)
+                    Text("Last visit: ")
+                }
             }
             .searchable(text: $searchName)
         }

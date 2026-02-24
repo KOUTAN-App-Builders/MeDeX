@@ -11,9 +11,14 @@ import SwiftData
 struct Patients_For_Today_View: View {
     
     @Query private var PatientData: [Patient_Data]
+    @Query private var AppointmentData: [Patient_Appointment_Data_Model]
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            List(PatientData) { patient in
+                Divider()
+            }
+        }
     }
 }
 
