@@ -10,13 +10,52 @@ import SwiftData
 
 struct Patients_For_Today_View: View {
     
-    @Query private var PatientData: [Patient_Data]
     @Query private var AppointmentData: [Patient_Appointment_Data_Model]
+    init(){
+        let startOfDay: Date = Calendar.current.startOfDay(for: .now)
+        let endOfDay: Date = Calendar.current.date(byAdding: .day, value: 1, to: startOfDay)!
+        
+        _AppointmentData = Query(filter: #Predicate<Patient_Appointment_Data_Model>{ appt in
+            appt.appointmentDate >= startOfDay &&
+            appt.appointmentDate < endOfDay
+        })
+    }
+    @Query private var PatientData: [Patient_Data]
+    
+    private var PatientsForToday: [Patient_Data] {
+        var seen = Set<ObjectIdentifier>()
+        var result: [Patient_Data] = []
+        for appt in AppointmentData {
+            let patient = appt.patient
+            let id = ObjectIdentifier(patient)
+            if !seen.contains(id) {
+                seen.insert(id)
+                result.append(patient)
+            }
+        }
+        return result
+    }
     
     var body: some View {
         VStack{
-            List(PatientData) { patient in
-                Divider()
+            if PatientsForToday.count == 0 {
+                Text("There are no appointments for today.")
+                    .font(.largeTitle)
+                    .bold()
+                    .padding()
+            }else{
+                List(PatientsForToday) { patient in
+                    NavigationLink {
+                        Patient_Detail_View(patient: patient)
+                    } label: {
+                        VStack{
+                            Text(patient.Name)
+                                .font(.title)
+                            //Planning to add appointment time and appointment reason. (Possibly a reason summary made with Apple Intelligence models.)
+                            Divider()
+                        }
+                    }
+                }
             }
         }
     }

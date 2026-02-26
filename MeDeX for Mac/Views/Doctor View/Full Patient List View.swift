@@ -22,6 +22,7 @@ struct Full_Patient_List_View: View {
                 VStack {
                     Text(patient.Name)
                         .font(.title)
+                        .bold()
                     Text("Last visit: ")
                 }
             }
