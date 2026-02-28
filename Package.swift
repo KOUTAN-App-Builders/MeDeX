@@ -4,27 +4,22 @@
 import PackageDescription
 
 let package = Package(
-    name: "Data Manager for MeDeX",
+    name: "MeDeXDataManager",
     platforms: [
         .macOS(.v14),
         .iOS(.v17),
     ],
     products: [
         .library(
-            name: "Data Manager for MeDeX",
-            targets: ["Data Manager for MeDeX"]),
+            name: "MeDeXDataManager",
+            targets: ["MeDeXDataManager"])
     ],
     dependencies: [
         
     ],
     targets: [
         .target(
-            name: "Data Manager for MeDeX",
-            dependencies: [],
-            path: "Sources"
-        ),
-        .testTarget(
-            name: "Data Manager for MeDeXTests",
-            dependencies: ["Data Manager for MeDeX"]),
+            name: "MeDeXDataManager"
+        )
     ]
 )
