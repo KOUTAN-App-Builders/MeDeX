@@ -7,11 +7,13 @@
 
 import SwiftUI
 import SwiftData
+import MeDeXDataManager
 
 @main
 struct MeDeX_for_MacApp: App {
     
     @AppStorage("isFirstLaunch") var isFirstLaunch: Bool = true
+    private let dataManager = DataManager()
     
     var body: some Scene {
         WindowGroup {
@@ -22,7 +24,7 @@ struct MeDeX_for_MacApp: App {
                     ContentView()
                 }
             }
-            .modelContainer(for: [Administrator_Data.self, Doctor_Data.self, Patient_Data.self, Patient_Clinical_Record.self,Patient_Appointment_Data_Model.self,Clinical_Department_Data_Model.self,Prescription_Data_Model.self,Medication_Detail_Data_Model.self])
+            .modelContainer(dataManager.container)
         }
     }
 }

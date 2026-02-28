@@ -37,6 +37,7 @@
 		3CE142072D42935A006BDCF7 /* Basic Instructions View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE142052D429306006BDCF7 /* Basic Instructions View.swift */; };
 		3CE922332D3F8F9600E0F967 /* Administrator Login View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE922312D3F8F9600E0F967 /* Administrator Login View.swift */; };
 		3CE922362D3F903300E0F967 /* Doctor Login View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE922352D3F903300E0F967 /* Doctor Login View.swift */; };
+		3CFDC4552F52F7EB00E743A0 /* MeDeXDataManager in Frameworks */ = {isa = PBXBuildFile; productRef = 3CFDC4542F52F7EB00E743A0 /* MeDeXDataManager */; };
 		3CFEB2EB2D7D6556005D83BE /* Department Manager View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFEB2EA2D7D6556005D83BE /* Department Manager View.swift */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CFDC4552F52F7EB00E743A0 /* MeDeXDataManager in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,6 +225,7 @@
 			);
 			name = "MeDeX for Mac";
 			packageProductDependencies = (
+				3CFDC4542F52F7EB00E743A0 /* MeDeXDataManager */,
 			);
 			productName = "MeDex for Mac";
 			productReference = 3CBE781B2D3E4B8A00021743 /* MeDeX for Mac.app */;
@@ -253,7 +256,7 @@
 			mainGroup = 3CBE78122D3E4B8A00021743;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				3CE142042D429081006BDCF7 /* XCLocalSwiftPackageReference "../Data Manager for MeDeX" */,
+				3CFDC4532F52F7EB00E743A0 /* XCLocalSwiftPackageReference "../MeDeXDataManager" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 3CBE781C2D3E4B8A00021743 /* Products */;
@@ -515,11 +518,18 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		3CE142042D429081006BDCF7 /* XCLocalSwiftPackageReference "../Data Manager for MeDeX" */ = {
+		3CFDC4532F52F7EB00E743A0 /* XCLocalSwiftPackageReference "../MeDeXDataManager" */ = {
 			isa = XCLocalSwiftPackageReference;
-			relativePath = "../Data Manager for MeDeX";
+			relativePath = ../MeDeXDataManager;
 		};
 /* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3CFDC4542F52F7EB00E743A0 /* MeDeXDataManager */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MeDeXDataManager;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3CBE78132D3E4B8A00021743 /* Project object */;
 }
