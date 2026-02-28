@@ -6,12 +6,20 @@
 //
 
 import SwiftUI
+import SwiftData
+import MeDeXDataManager
 
 @main
 struct MeDeX_for_iOSApp: App {
+    
+    private let dataManager = DataManager()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack{
+                ContentView()
+            }
+            .modelContainer(dataManager.container)
         }
     }
 }
