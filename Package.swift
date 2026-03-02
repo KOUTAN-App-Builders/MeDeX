@@ -20,6 +20,10 @@ let package = Package(
     targets: [
         .target(
             name: "MeDeXDataManager"
+        ),
+        .testTarget(
+            name: "MeDeXDataManagerTests", 
+            dependencies: ["MeDeXDataManager"]
         )
     ]
 )
