@@ -12,12 +12,17 @@ import MeDeXDataManager
 @main
 struct MeDeX_for_iOSApp: App {
     
+    @AppStorage("isFirstLaunch") var isFirstLaunch: Bool = true
     private let dataManager = DataManager()
     
     var body: some Scene {
         WindowGroup {
             NavigationStack{
-                ContentView()
+                if isFirstLaunch{
+                    Welcome_View()
+                }else{
+                    ContentView()
+                }
             }
             .modelContainer(dataManager.container)
         }

@@ -11,6 +11,10 @@
 		3C65E6F42D3FED3C006E32F2 /* MeDeX_for_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C65E6F12D3FED3C006E32F2 /* MeDeX_for_iOSApp.swift */; };
 		3C65E6F52D3FED3C006E32F2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C65E6ED2D3FED3C006E32F2 /* Preview Assets.xcassets */; };
 		3C65E6F62D3FED3C006E32F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C65E6EF2D3FED3C006E32F2 /* Assets.xcassets */; };
+		3C7A11592F55971B009E882A /* Sample Preview Data Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7A11582F55971B009E882A /* Sample Preview Data Models.swift */; };
+		3C7A115F2F5597AD009E882A /* Welcome View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7A115E2F5597AD009E882A /* Welcome View.swift */; };
+		3C7A11612F559FE4009E882A /* Doctor Login View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7A11602F559FE4009E882A /* Doctor Login View.swift */; };
+		3C7A11652F55A029009E882A /* Patient Login View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7A11642F55A029009E882A /* Patient Login View.swift */; };
 		3CFDC4582F52F7F800E743A0 /* MeDeXDataManager in Frameworks */ = {isa = PBXBuildFile; productRef = 3CFDC4572F52F7F800E743A0 /* MeDeXDataManager */; };
 /* End PBXBuildFile section */
 
@@ -20,6 +24,10 @@
 		3C65E6EF2D3FED3C006E32F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C65E6F02D3FED3C006E32F2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3C65E6F12D3FED3C006E32F2 /* MeDeX_for_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeDeX_for_iOSApp.swift; sourceTree = "<group>"; };
+		3C7A11582F55971B009E882A /* Sample Preview Data Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sample Preview Data Models.swift"; sourceTree = "<group>"; };
+		3C7A115E2F5597AD009E882A /* Welcome View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Welcome View.swift"; sourceTree = "<group>"; };
+		3C7A11602F559FE4009E882A /* Doctor Login View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Doctor Login View.swift"; sourceTree = "<group>"; };
+		3C7A11642F55A029009E882A /* Patient Login View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Patient Login View.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +45,7 @@
 		3C04D6F92D46336900041AA6 /* Data Models */ = {
 			isa = PBXGroup;
 			children = (
+				3C7A11582F55971B009E882A /* Sample Preview Data Models.swift */,
 			);
 			path = "Data Models";
 			sourceTree = "<group>";
@@ -70,11 +79,46 @@
 			children = (
 				3C65E6F12D3FED3C006E32F2 /* MeDeX_for_iOSApp.swift */,
 				3C65E6F02D3FED3C006E32F2 /* ContentView.swift */,
+				3C7A115A2F55972C009E882A /* Views */,
 				3C04D6F92D46336900041AA6 /* Data Models */,
 				3C65E6EF2D3FED3C006E32F2 /* Assets.xcassets */,
 				3C65E6EE2D3FED3C006E32F2 /* Preview Content */,
 			);
 			path = "MeDeX for iOS";
+			sourceTree = "<group>";
+		};
+		3C7A115A2F55972C009E882A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3C7A115B2F55973A009E882A /* Setup View */,
+				3C7A115C2F559742009E882A /* Doctor View */,
+				3C7A115D2F55975A009E882A /* Patient View */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3C7A115B2F55973A009E882A /* Setup View */ = {
+			isa = PBXGroup;
+			children = (
+				3C7A115E2F5597AD009E882A /* Welcome View.swift */,
+			);
+			path = "Setup View";
+			sourceTree = "<group>";
+		};
+		3C7A115C2F559742009E882A /* Doctor View */ = {
+			isa = PBXGroup;
+			children = (
+				3C7A11602F559FE4009E882A /* Doctor Login View.swift */,
+			);
+			path = "Doctor View";
+			sourceTree = "<group>";
+		};
+		3C7A115D2F55975A009E882A /* Patient View */ = {
+			isa = PBXGroup;
+			children = (
+				3C7A11642F55A029009E882A /* Patient Login View.swift */,
+			);
+			path = "Patient View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,8 +198,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C7A115F2F5597AD009E882A /* Welcome View.swift in Sources */,
+				3C7A11592F55971B009E882A /* Sample Preview Data Models.swift in Sources */,
 				3C65E6F32D3FED3C006E32F2 /* ContentView.swift in Sources */,
 				3C65E6F42D3FED3C006E32F2 /* MeDeX_for_iOSApp.swift in Sources */,
+				3C7A11652F55A029009E882A /* Patient Login View.swift in Sources */,
+				3C7A11612F559FE4009E882A /* Doctor Login View.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
