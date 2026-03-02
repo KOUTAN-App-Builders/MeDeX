@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+import MeDeXDataManager
 
 struct Administrator_Home_View: View {
     

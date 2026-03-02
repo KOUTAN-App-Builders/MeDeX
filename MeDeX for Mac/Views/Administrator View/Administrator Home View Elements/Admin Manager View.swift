@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+import MeDeXDataManager
 
 struct Admin_Manager_View: View {
     

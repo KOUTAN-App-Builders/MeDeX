@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+import MeDeXDataManager
 
 struct Patient_Data_List_View: View {
     

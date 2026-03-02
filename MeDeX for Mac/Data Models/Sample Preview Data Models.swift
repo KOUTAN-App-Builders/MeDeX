@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import SwiftData
+import MeDeXDataManager
 
 struct SampleDataModifier: PreviewModifier {
     static func makeSharedContext() throws -> ModelContainer {
