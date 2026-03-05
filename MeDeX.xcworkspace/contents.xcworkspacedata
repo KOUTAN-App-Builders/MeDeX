@@ -1,25 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
+   <FileRef
+      location = "group:README.md">
+   </FileRef>
+   <FileRef
+      location = "group:README.EN.md">
+   </FileRef>
+   <FileRef
+      location = "group:README.JA.md">
+   </FileRef>
    <Group
-      location = "group:MeDeX Main Branch Folder"
-      name = "MeDeX Main Branch Folder">
-      <FileRef
-         location = "group:README.md">
-      </FileRef>
-      <FileRef
-         location = "group:README.EN.md">
-      </FileRef>
-      <FileRef
-         location = "group:README.JA.md">
-      </FileRef>
-      <Group
-         location = "group:README Files for iOS App"
-         name = "README Files for iOS App">
-         <FileRef
-            location = "group:README for iOS App.EN.md">
-         </FileRef>
-      </Group>
+      location = "group:MeDeX Documentation"
+      name = "MeDeX Documentation">
       <Group
          location = "group:README Files for Mac App"
          name = "README Files for Mac App">
@@ -27,12 +20,19 @@
             location = "group:README for Mac App.EN.md">
          </FileRef>
       </Group>
+      <Group
+         location = "group:README Files for iOS App"
+         name = "README Files for iOS App">
+         <FileRef
+            location = "group:README for iOS App.EN.md">
+         </FileRef>
+      </Group>
    </Group>
    <FileRef
-      location = "group:MeDeX for iOS/MeDeX for iOS.xcodeproj">
+      location = "group:MeDeX for iOS.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:MeDex for Mac/MeDeX for Mac.xcodeproj">
+      location = "group:MeDeX for Mac.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:MeDeXDataManager">
