@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "A5FA693D-B330-40A5-9978-BC8B28A9DA03",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "performanceAntipatternCheckerEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "MeDeXDataManagerTests",
+        "name" : "MeDeXDataManagerTests"
+      }
+    }
+  ],
+  "version" : 1
+}
