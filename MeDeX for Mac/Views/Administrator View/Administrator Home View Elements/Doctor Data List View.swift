@@ -27,7 +27,7 @@ struct Doctor_Data_List_View: View {
             ZStack{
                 List(doctors){ Doctor in
                     NavigationLink{
-                        Doctor_Data_Detail_View()
+                        Doctor_Data_Detail_View(Doctor: Doctor)
                     }label:{
                         VStack{
                             Text(Doctor.UserName)
@@ -64,8 +64,54 @@ struct Doctor_Data_List_View: View {
 }
 
 struct Doctor_Data_Detail_View: View {
+    
+    @Bindable var Doctor: Doctor_Data
+    @Query private var departments: [Clinical_Department_Data_Model]
+    @Environment(\.modelContext) var Context
+    @Environment(\.dismiss) var Dismiss
+    
     var body: some View {
-        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Hello, world!@*/Text("Hello, world!")/*@END_MENU_TOKEN@*/
+        VStack{
+            HStack{
+                Text("Edit Doctor Data")
+                    .font(.largeTitle)
+                    .bold()
+                Spacer()
+            }
+            Spacer()
+            HStack{
+                Spacer()
+                Text("Doctor Name:")
+                TextField("Name", text: $Doctor.UserName)
+                Spacer()
+            }
+            HStack{
+                Spacer()
+                Text("Password:")
+                TextField("Password", text: $Doctor.Password)
+                Spacer()
+            }
+            Picker("Clinical Department:", selection: $Doctor.ClinicalDepartment) {
+                ForEach(departments){ department in
+                    Text(department.DepartmentName)
+                        .tag(Optional(department))
+                }
+            }.pickerStyle(.menu)
+            Button {
+                saveChanges()
+                Dismiss()
+            } label: {
+                Text("Save")
+            }
+            Spacer()
+        }
+    }
+    func saveChanges(){
+        do{
+            try Context.save()
+        }catch{
+            print("Failed to save updated doctor data. Error: \(error)")
+        }
     }
 }
 

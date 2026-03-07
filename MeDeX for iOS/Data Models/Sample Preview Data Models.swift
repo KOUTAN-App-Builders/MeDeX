@@ -20,8 +20,8 @@ struct SampleDataModifier: PreviewModifier {
             // Inserting Sample Data
             let admin = Administrator_Data(UserName: "Admin", Password: "SecurePassword123")
             let doctor = Doctor_Data(UserName: "Jason Smith", Password: "ExamplePassword", ClinicalDepartment: [Clinical_Department_Data_Model(id: UUID(), DepartmentName: "Neurology")], RegisteredDate: Date())
-            let patient1 = Patient_Data(Name: "John Doe", Age: 45, Sex: "Male", BloodType: "A", Height: 173.1, Weight: 72.3, PreviousIllnesses: "None", finalUpdatedDate: Date())
-            let patient2 = Patient_Data(Name: "Jame Smith", Age: 29, Sex: "Female", BloodType: "AB", Height: 156.7, Weight: 56.3, PreviousIllnesses: "Anaphylacxie Shock", finalUpdatedDate: Date())
+        let patient1 = Patient_Data(Name: "John Doe", Password: "SamplePassword1", Age: 45, Sex: "Male", BloodType: "A", Height: 173.1, Weight: 72.3, PreviousIllnesses: "None", finalUpdatedDate: Date())
+        let patient2 = Patient_Data(Name: "Jame Smith", Password: "SamplePassword2", Age: 29, Sex: "Female", BloodType: "AB", Height: 156.7, Weight: 56.3, PreviousIllnesses: "Anaphylacxie Shock", finalUpdatedDate: Date())
             let department1 = Clinical_Department_Data_Model(id: UUID(), DepartmentName: "Otolaryngology")
             let department2 = Clinical_Department_Data_Model(id: UUID(), DepartmentName: "Ophthalmology")
             let department3 = Clinical_Department_Data_Model(id: UUID(), DepartmentName: "Dermatology")

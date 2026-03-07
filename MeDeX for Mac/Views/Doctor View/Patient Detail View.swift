@@ -75,5 +75,5 @@ struct Patient_Detail_View: View {
 }
 
 #Preview {
-    Patient_Detail_View(patient: Patient_Data(Name: "George Smith", Age: 45, Sex: "male", BloodType: "AB", Height: 170.5, Weight: 65.5, PreviousIllnesses: "", finalUpdatedDate: Date()))
+    Patient_Detail_View(patient: Patient_Data(Name: "George Smith", Password: "Password", Age: 45, Sex: "male", BloodType: "AB", Height: 170.5, Weight: 65.5, PreviousIllnesses: "", finalUpdatedDate: Date()))
 }

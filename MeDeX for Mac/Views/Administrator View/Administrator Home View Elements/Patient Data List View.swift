@@ -27,7 +27,7 @@ struct Patient_Data_List_View: View {
             ZStack{
                 List(PatientData){ Patient in
                     NavigationLink{
-                        Patient_Data_Detail_View()
+                        Patient_Data_Detail_View(patient: Patient)
                     }label:{
                         VStack{
                             Text(Patient.Name)
@@ -51,10 +51,40 @@ struct Patient_Data_List_View: View {
 
 struct Patient_Data_Detail_View: View {
     
-    @Query private var PatientData: [Patient_Data]
+    @Bindable var patient: Patient_Data
+    @State private var showPassword: Bool = false
+    @Environment(\.modelContext) var Context
+    @Environment(\.dismiss) var Dismiss
     
     var body: some View {
-        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Hello, world!@*/Text("Hello, world!")/*@END_MENU_TOKEN@*/
+        VStack{
+            HStack{
+                Text("Patient Name:")
+                TextField("Name", text: $patient.Name)
+            }
+            HStack{
+                Text("Password:")
+                if showPassword == true{
+                    TextField("Password", text: $patient.Password)
+                }else{
+                    SecureField("Password", text: $patient.Password)
+                }
+                Button {
+                    showPassword.toggle()
+                } label: {
+                    Image(systemName: showPassword ? "eye.slash" : "eye")
+                }
+            }
+            HStack{
+                Text("Sex:")
+                TextField("30", text: $patient.Sex)
+                Text("Bloodtype:")
+                TextField("AB", text: $patient.BloodType)
+            }
+            Divider()
+            Text("Medical records can't be edited here.")
+                .font(.title)
+        }
     }
 }
 
@@ -65,7 +95,8 @@ struct Patient_Data_Creation_View: View {
     @Environment(\.modelContext)var Context
     
     var body: some View {
-        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Hello, world!@*/Text("Hello, world!")/*@END_MENU_TOKEN@*/
+        Text("Patient Data Creation is only allowed in the patient view.")
+            .font(.largeTitle)
     }
 }
 

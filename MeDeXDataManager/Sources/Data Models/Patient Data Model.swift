@@ -12,6 +12,7 @@ import SwiftData
 public final class Patient_Data{
     public var id: UUID
     public var Name: String
+    public var Password: String
     public var Age: Int
     public var Sex: String
     public var BloodType: String
@@ -21,9 +22,10 @@ public final class Patient_Data{
     @Relationship(deleteRule: .cascade) public var ClinicalRecord: [Patient_Clinical_Record]?
     public var finalUpdatedDate: Date
     
-    public init(Name: String, Age: Int, Sex: String, BloodType: String, Height: Double, Weight: Double,PreviousIllnesses: String, ClinicalRecord: [Patient_Clinical_Record]? = [], finalUpdatedDate: Date) {
+    public init(Name: String, Password: String, Age: Int, Sex: String, BloodType: String, Height: Double, Weight: Double,PreviousIllnesses: String, ClinicalRecord: [Patient_Clinical_Record]? = [], finalUpdatedDate: Date) {
         self.id = UUID()
         self.Name = Name
+        self.Password = Password
         self.Age = Age
         self.Sex = Sex
         self.BloodType = BloodType
