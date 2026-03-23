@@ -6,15 +6,17 @@
 //
 
 import SwiftUI
+import MeDeXDataManager
 
 struct Network_Setup_View: View {
     
-    @State private var IPAddress: String = ""
-    @State private var PortNumber: String = ""
+    @AppStorage("server_ip") private var IPAddress: String = ""
+    @AppStorage("server_port") private var PortNumber: String = ""
     @State private var UserName: String = ""
     @State private var Password: String = ""
     @State private var showPassword: Bool = false
     @State private var connectionAvailability: Bool = false
+    @State private var navigation: Bool = false
     
     var body: some View {
         VStack{
@@ -79,14 +81,18 @@ struct Network_Setup_View: View {
                 }
                 .foregroundStyle(connectionAvailability ? Color.green : Color.red)
             }
-            NavigationLink {
-                Basic_Instructions_View()
+            Button {
+                AuthManager.saveCredentials(username: UserName, password: Password)
+                navigation = true
             } label: {
                 Text("Confirm Server Settings")
                     .frame(width: 200, height: 20)
                     .background(Color.accent)
                     .foregroundStyle(Color.white)
             }
+        }
+        .navigationDestination(isPresented: $navigation) {
+            Basic_Instructions_View()
         }
         Spacer()
         #if DEBUG

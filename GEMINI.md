@@ -8,7 +8,7 @@
 - **UI Framework:** SwiftUI
 - **Data Persistence:** SwiftData
 - **Shared Logic:** Swift Package (`MeDeXDataManager`)
-- **Security:** CryptoKit (Symmetric encryption currently implemented)
+- **Security:** CryptoKit (Symmetric encryption) & Keychain (Credentials)
 - **Platforms:** macOS (v14+), iOS (v17+)
 
 ## Architecture & Structure
@@ -16,39 +16,47 @@ The project is organized into a workspace containing two main app targets and on
 
 1.  **MeDeXDataManager (Swift Package):**
     - **Models:** Defines `@Model` classes for `Patient_Data`, `Doctor_Data`, `Administrator_Data`, `Clinical_Record`, etc.
-    - **Persistence:** Contains `DataManager.swift` and `Persistence.swift` which initialize the shared `ModelContainer`.
+    - **Persistence:** Contains `DataManager.swift` and `Persistence.swift`. -> initializes the shared `ModelContainer`.
+    - **Credential Manager:** A new module using `KeychainHelper` and `AuthManager` to securely store/load user credentials.
 2.  **MeDeX for Mac:**
     - Tailored for hospital workstations.
     - Includes complex management views for Administrators and workflow views for Doctors.
     - Features setup flows for network and administrator configuration.
+    - Standardized `Network_Setup_View` for server configuration.
 3.  **MeDeX for iOS:**
     - Focused on portability for both patients and staff.
     - Shares the same data models via the package.
+    - Shares identical server setup logic with the Mac app.
 
 ## Development Status & Roadmap
-- **Current State:** The macOS UI is largely complete. Basic SwiftData persistence is functional. A prototype `EncryptionManager` exists.
-- **Immediate Goals:**
-    - Implement Data Transfer Objects (DTOs) for JSON serialization.
+- **Current State:** The macOS/iOS UI foundations are complete. SwiftData persistence and **Secure Credential Storage** (AppStorage/Keychain) are implemented.
+- **Next Steps (Phase 1):**
+    - Implement Data Transfer Objects (DTOs) and `Codable` structs for JSON serialization.
+    - Establish the "Contract" between the apps and the future Vapor server.
+    - Create a separate Vapor server project.
+
+- **Upcoming Expectations**
     - Transition from local-only storage to a LAN-based client-server model.
     - Enhance security using public-key cryptography.
-    - Implement concurrency control (locking) for shared JSON datasets.
-    - Formalize credential management (IP, Port, User) via Keychain/AppStorage.
+    - Implement concurrency control (locking) for shared JSON datasets. 
 
 ## Building and Running
 1.  Open `MeDeX.xcworkspace` in Xcode.
 2.  **Targets:**
     - `MeDeX for Mac`: Run on macOS.
     - `MeDeX for iOS`: Run on iOS Simulator or Device.
-3.  **Tests:** Run tests in `MeDeXDataManager/Tests` to verify data model logic.
 
 ## Conventions & Standards
-- **Data Models:** SwiftData models are stored in the `MeDeXDataManager` package to ensure consistency across apps.
-- **Naming:** Follows a mix of `CamelCase` and `Snake_Case` for models (e.g., `Patient_Data`, `Clinical_Department_Data_Model`). 
-- **Initialization:** Both apps use `DataManager()` to provide the `modelContainer` to the root view via `.modelContainer(dataManager.container)`.
-- **Onboarding:** Use `@AppStorage("isFirstLaunch")` to toggle between `Welcome_View` and `ContentView`.
+- **Data Models:** SwiftData models are stored in the `MeDeXDataManager` package.
+- **Credential Management:**
+    - **AppStorage:** Used for non-sensitive data like `server_ip` and `server_port`.
+    - **Keychain:** Used via `AuthManager` for sensitive data like `username` and `password`.
+- **Initialization:** Both apps use `DataManager()` to provide the `modelContainer`.
+- **Onboarding:** Standardized across platforms using `@AppStorage("isFirstLaunch")`.
 
 ## Key Files
+- `MeDeXDataManager/Sources/Credential Manager/`: Secure storage logic (Keychain).
 - `MeDeXDataManager/Sources/Data Models/`: The source of truth for all data structures.
 - `MeDeXDataManager/Sources/Data Manager.swift`: The central controller for SwiftData.
-- `MeDeX for Mac/Data Managers/Encryption Manager.swift`: Current encryption logic using `AES.GCM`.
-- `MeDeX for Mac/Views/Setup View/Network Setup View.swift`: UI for configuring server connectivity.
+- `MeDeX for iOS/Views/Setup View/Network Setup View.swift`: Standardized server setup UI.
+- `MeDeX for Mac/Views/Setup View/Network Setup View.swift`: Standardized server setup UI.
