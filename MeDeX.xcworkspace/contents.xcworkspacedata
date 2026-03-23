@@ -8,6 +8,9 @@
       location = "group:README.EN.md">
    </FileRef>
    <FileRef
+      location = "group:GEMINI.md">
+   </FileRef>
+   <FileRef
       location = "group:README.JA.md">
    </FileRef>
    <Group
