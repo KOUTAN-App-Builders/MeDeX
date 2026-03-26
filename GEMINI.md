@@ -30,6 +30,11 @@ The project is organized into a workspace containing two main app targets and on
 
 ## Development Status & Roadmap
 - **Current State:** The macOS/iOS UI foundations are complete. SwiftData persistence and **Secure Credential Storage** (AppStorage/Keychain) are implemented.
+- **Recent Progress (2026/03/26):**
+    - Refactored `Patient_Data` model: Replaced `Age` with `BirthDate` and introduced `sex` and `bloodType` enums for type safety.
+    - Added `PatientDraft` class in `MeDeXDataManager` using `@Observable` to handle temporary data during patient registration.
+    - Implemented iOS Patient Registration UI: Added credential registration with password confirmation and validation.
+    - Enhanced `Doctor_Login_View` with error handling for failed login attempts.
 - **Next Steps (Phase 1):**
     - Implement Data Transfer Objects (DTOs) and `Codable` structs for JSON serialization.
     - Establish the "Contract" between the apps and the future Vapor server.
@@ -57,6 +62,8 @@ The project is organized into a workspace containing two main app targets and on
 ## Key Files
 - `MeDeXDataManager/Sources/Credential Manager/`: Secure storage logic (Keychain).
 - `MeDeXDataManager/Sources/Data Models/`: The source of truth for all data structures.
+- `MeDeXDataManager/Sources/Data Models/Patient Data Model Draft.swift`: Temporary data holder for registration.
 - `MeDeXDataManager/Sources/Data Manager.swift`: The central controller for SwiftData.
+- `MeDeX for iOS/Views/Patient View/Patient Account Creation Views/`: New patient registration flow.
 - `MeDeX for iOS/Views/Setup View/Network Setup View.swift`: Standardized server setup UI.
 - `MeDeX for Mac/Views/Setup View/Network Setup View.swift`: Standardized server setup UI.

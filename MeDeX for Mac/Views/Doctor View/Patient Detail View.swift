@@ -26,9 +26,9 @@ struct Patient_Detail_View: View {
                 Section(header: Text("About Patient:").font(.title2).bold()) {
                     HStack{
                         VStack{
-                            Text("Age: \(patient.Age)")
-                            Text("Sex: \(patient.Sex)")
-                            Text("Bloodtype: \(patient.BloodType)")
+                            Text("Age: \(Calendar.current.dateComponents([.year], from: patient.BirthDate, to: Date()).year ?? 0)")
+                            Text("Sex: \(patient.Sex.rawValue)")
+                            Text("Bloodtype: \(patient.BloodType.rawValue)")
                         }
                         Divider()
                             .frame(height: 60)
@@ -59,7 +59,7 @@ struct Patient_Detail_View: View {
                                 Image(systemName: "plus")
                             }
                         }
-                        List(patient.ClinicalRecord ?? [], id: \.id){ record in
+                        List(patient.ClinicalRecord, id: \.id){ record in
                             VStack{
                                 Text("Visit Date: \(record.Date, format: .dateTime.year().month().day())")
                                     .font(.caption)
@@ -75,5 +75,5 @@ struct Patient_Detail_View: View {
 }
 
 #Preview {
-    Patient_Detail_View(patient: Patient_Data(Name: "George Smith", Password: "Password", Age: 45, Sex: "male", BloodType: "AB", Height: 170.5, Weight: 65.5, PreviousIllnesses: "", finalUpdatedDate: Date()))
+    Patient_Detail_View(patient: Patient_Data(Name: "George Smith", Password: "Password", BirthDate: Date(), Sex: .male, BloodType: .AB, Height: 170.5, Weight: 65.5, PreviousIllnesses: "", finalUpdatedDate: Date()))
 }

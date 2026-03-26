@@ -13,20 +13,20 @@ public final class Patient_Data{
     public var id: UUID
     public var Name: String
     public var Password: String
-    public var Age: Int
-    public var Sex: String
-    public var BloodType: String
+    public var BirthDate: Date
+    public var Sex: sex
+    public var BloodType: bloodType
     public var Height: Double
     public var Weight: Double
     public var PreviousIllnesses: String?
-    @Relationship(deleteRule: .cascade) public var ClinicalRecord: [Patient_Clinical_Record]?
+    @Relationship(deleteRule: .cascade) public var ClinicalRecord: [Patient_Clinical_Record] = []
     public var finalUpdatedDate: Date
     
-    public init(Name: String, Password: String, Age: Int, Sex: String, BloodType: String, Height: Double, Weight: Double,PreviousIllnesses: String, ClinicalRecord: [Patient_Clinical_Record]? = [], finalUpdatedDate: Date) {
+    public init(Name: String, Password: String, BirthDate: Date, Sex: sex, BloodType: bloodType, Height: Double, Weight: Double,PreviousIllnesses: String, ClinicalRecord: [Patient_Clinical_Record] = [], finalUpdatedDate: Date) {
         self.id = UUID()
         self.Name = Name
         self.Password = Password
-        self.Age = Age
+        self.BirthDate = BirthDate
         self.Sex = Sex
         self.BloodType = BloodType
         self.Height = Height
@@ -35,4 +35,17 @@ public final class Patient_Data{
         self.ClinicalRecord = ClinicalRecord
         self.finalUpdatedDate = finalUpdatedDate
     }
+}
+
+
+public enum sex: String, Codable, CaseIterable {
+    case male = "Male"
+    case female = "Female"
+}
+
+public enum bloodType: String, Codable, CaseIterable {
+    case A = "A"
+    case B = "B"
+    case AB = "AB"
+    case O = "O"
 }

@@ -17,6 +17,8 @@ struct Patient_Login_View: View {
     @State private var showPassword: Bool = false
     @State private var loginSuccess: Patient_Data? = nil
     @State private var loginError: Bool = false
+    @State private var draft = PatientDraft()
+    @State private var showSheet: Bool = false
     
     var body: some View {
         VStack{
@@ -56,18 +58,22 @@ struct Patient_Login_View: View {
             Divider()
             Text("Don't have your account yet?")
             Text("Click on the button below for registration.")
-            NavigationLink {
-                New_Patient_Credential_Registration_View()
+            Button {
+                showSheet = true
             } label: {
                 Text("Click here for registration.")
             }
-
         }
         .navigationTitle("Patient Login")
         .navigationBarBackButtonHidden()
         .navigationDestination(item: $loginSuccess) { patient in
             Patient_Home_View(patient: patient)
                 .navigationBarBackButtonHidden()
+        }
+        .sheet(isPresented: $showSheet) {
+            NavigationStack{
+                New_Patient_Credential_Registration_View(patientDraft: draft)
+            }
         }
         .padding()
     }

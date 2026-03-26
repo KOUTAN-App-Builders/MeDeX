@@ -18,7 +18,7 @@ final class PatientTests: XCTestCase {
         
         let context = container.mainContext
         
-        let patient = Patient_Data(Name: "Test Patient", Age: 30, Sex: "Male", BloodType: "AB", Height: 175.0, Weight: 65.0, PreviousIllnesses: "N/A", finalUpdatedDate: Date())
+        let patient = Patient_Data(Name: "Test Patient", Password: "Password", BirthDate: Date(), Sex: .male, BloodType: .A, Height: 175.0, Weight: 65.0, PreviousIllnesses: "N/A", finalUpdatedDate: Date())
         
         context.insert(patient)
         try context.save()

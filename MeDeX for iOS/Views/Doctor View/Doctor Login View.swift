@@ -67,6 +67,8 @@ struct Doctor_Login_View: View {
     func login(){
         if let user = doctors.first(where: { $0.UserName == UserName && $0.Password == Password }) {
             loginSuccess = user
+        }else{
+            loginError = true
         }
     }
 }
