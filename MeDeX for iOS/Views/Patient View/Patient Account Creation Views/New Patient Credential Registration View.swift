@@ -65,7 +65,7 @@ struct New_Patient_Credential_Registration_View: View {
             HStack{
                 if passwordMatchError {
                     Image(systemName: "exclamationmark.triangle")
-                    Text("please make sure that you put in your name and password correctly.")
+                    Text("Name must not be empty and passwords must match.")
                         .foregroundStyle(Color.red)
                 }
             }
@@ -88,6 +88,7 @@ struct New_Patient_Credential_Registration_View: View {
                         .foregroundStyle(Color.white)
                         .padding()
                 }
+                .disabled(patientDraft.Name.isEmpty || Password.isEmpty || PasswordConfirmation.isEmpty)
             }
         }
         .navigationTitle("Add Credentials")
@@ -96,7 +97,8 @@ struct New_Patient_Credential_Registration_View: View {
         }
     }
     func checkPasswordMatch() {
-        if patientDraft.Name != "" && Password == PasswordConfirmation {
+        passwordMatchError = false
+        if !patientDraft.Name.isEmpty && !Password.isEmpty && Password == PasswordConfirmation {
             patientDraft.Password = Password
             passwordMatched = true
         }else{

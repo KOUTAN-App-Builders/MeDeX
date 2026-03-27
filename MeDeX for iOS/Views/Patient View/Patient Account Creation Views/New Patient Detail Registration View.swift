@@ -13,7 +13,9 @@ struct New_Patient_Detail_Registration_View: View {
     @Bindable var patientDraft: PatientDraft
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            
+        }
     }
 }
 
