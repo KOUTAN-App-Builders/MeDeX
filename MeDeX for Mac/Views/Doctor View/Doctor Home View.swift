@@ -14,6 +14,7 @@ struct Doctor_Home_View: View {
     @Query private var patients: [Patient_Data]
     @State private var selectedUI: DoctorViewSelector = .Patients_For_Today
     @Bindable var Doctor: Doctor_Data
+    @State var selectedDepartment: Clinical_Department_Data_Model
     
     var body: some View {
         NavigationStack{
@@ -34,6 +35,11 @@ struct Doctor_Home_View: View {
                             .clipShape(RoundedRectangle(cornerRadius: 10))
                     }
                 }
+                Menu("Select a department:"){
+                    List(Doctor.ClinicalDepartment, selection: $selectedDepartment){ dep in
+                        Text(dep.DepartmentName)
+                    }
+                }
                 Picker("", selection: $selectedUI) {
                     Text("Patients for Today").tag(DoctorViewSelector.Patients_For_Today)
                     Text("Full Patient List").tag(DoctorViewSelector.Patient_Full_List)
@@ -44,7 +50,7 @@ struct Doctor_Home_View: View {
                 case .Patients_For_Today:
                     Patients_For_Today_View()
                 case .Patient_Full_List:
-                    Full_Patient_List_View()
+                    Full_Patient_List_View(doctor: Doctor, department: selectedDepartment)
                 }
             }
         }
@@ -59,6 +65,6 @@ enum DoctorViewSelector: Int{
 
 #Preview(traits: .sampleData) {
     NavigationStack{
-        Doctor_Home_View(Doctor: Doctor_Data(UserName: "Jason Smith", Password: "ExamplePassword", ClinicalDepartment: [Clinical_Department_Data_Model(id: UUID(), DepartmentName: "Neurology")], RegisteredDate: Date()))
+        Doctor_Home_View(Doctor: Doctor_Data(UserName: "Jason Smith", Password: "ExamplePassword", ClinicalDepartment: [Clinical_Department_Data_Model(id: UUID(), DepartmentName: "Neurology")], RegisteredDate: Date()), selectedDepartment: Clinical_Department_Data_Model(id: UUID(), DepartmentName: "Orthopedics"))
     }
 }

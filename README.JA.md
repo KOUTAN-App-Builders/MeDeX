@@ -3,49 +3,65 @@
 
 
 ## **[このプロジェクトについて]**
-このアプリは病院における患者のデータ管理などを目的として開発されたものです。
-このプロジェクトは主に2つのアプリから構成されます。
-Mac用アプリとiOS用アプリです。
-このプロジェクトがお役に立てば幸いです！
+- このアプリは病院における患者のデータ管理などを目的として開発されたものです。
+- このプロジェクトは主に2つのアプリから構成されます。
+- Mac用アプリとiOS用アプリです。
+- このプロジェクトがお役に立てば幸いです！
 
 
 ## **[アプリの機能]**
-###**(macOS アプリ)**
-1. 
-2. 
-3. 
-4. 
-5.
+### **(macOS アプリ)**
+- 院内サーバのセットアップもmacOS版アプリに実装予定。
+- 管理者と医師でそれぞれ独立したログイン画面。
+- 管理者画面
+    1. 医師データの管理(氏名、パスワード、診療科の追加・編集)
+    2. 患者データの管理(氏名、パスワードの編集)
+    3. 管理者データの管理(氏名、パスワードの追加・編集)
+    4. 診療科の管理(診療科の追加・編集・消去)
+    5. ネットワーク設定(サーバ情報の編集)
+- 医師画面
+    1. 今日の患者一覧(当日診察を受ける患者のリスト画面)
+    2. 患者全一覧(全ての患者のリスト画面)
+    - 患者の個人情報とカルテ(診療記録)はいずれの画面からもアクセス可能。
+    - カルテ作成用画面も用意。
 
-###**(iOS アプリ)**
-1.
-2.
-3.
-4.
+### **(iOS アプリ -- 未作成)**
+- 医師と患者でそれぞれ独立したログイン画面。
+- 医師画面
+    - macOS版と同様の機能。
+- 患者画面
+    1. 名前、パスワード、個人情報の追加。
+    2. 予約の作成。
+    3. 診察前の問診回答。
 
 
-##**[問題点と期待される機能]**
+## **[問題点と期待される機能]**
 **この問題と期待される機能のリストは、次回のリリース後にリセットされます。**
-[]
-[]
-[]
-[]
-[]
+- [ ] iOS版アプリの完成。
+- [ ] リストからの医師・患者の検索。
+- [ ] サーバを用いたLAN内データ共有システムのセットアップの構築。
+- [ ] カルテ入力支援のためのFoundation Models Framework実装。
+- [ ] 診断時に見逃した可能性の発見支援のためのMedGemma実装。
+- [ ] 
+- [ ] 
+- [ ] 
 
 
 ## **[各アプリプロジェクトブランチへのリンク]**
-###**:warning:重要**
-**MeDeXは個別のブランチに分割されなくなり、'main'ブランチに統合されました。** 
+**:warning:重要**
+
+**MeDeXは個別のブランチに分割されなくなり、`main`ブランチに統合されました。** 
+
 **以下にリンクされているブランチは現在使用されていません。アーカイブとして保存されています。**
-iOSアプリブランチにアクセスするには、[ここ](https://github.com/KOUTAN-App-Builders/MeDeX/tree/MeDeX-iOS-App) をクリック。
-Macアプリブランチにアクセスするには、[ここ](https://github.com/KOUTAN-App-Builders/MeDeX/tree/MeDeX-macOS-App) をクリック。
-複数デバイス間でのデータ管理を行うためのSwift Packageブランチにアクセスするには、[ここ](https://github.com/KOUTAN-App-Builders/MeDeX/tree/MeDeX-Data-Manager-(Swift-Package)) をクリック。
+- iOSアプリブランチにアクセスするには、[ここ](https://github.com/KOUTAN-App-Builders/MeDeX/tree/MeDeX-iOS-App) をクリック。
+- Macアプリブランチにアクセスするには、[ここ](https://github.com/KOUTAN-App-Builders/MeDeX/tree/MeDeX-macOS-App) をクリック。
+- 複数デバイス間でのデータ管理を行うためのSwift Packageブランチにアクセスするには、[ここ](https://github.com/KOUTAN-App-Builders/MeDeX/tree/MeDeX-Data-Manager-(Swift-Package)) をクリック。
 
 
 ## **[各プロジェクトのREADMEファイルへのリンク：全て英語]**
-MacアプリのREADMEファイルにアクセスするには [ここ](https://github.com/KOUTAN-App-Builders/MeDeX/tree/main/MeDeX%20Documentation/README%20Files%20for%20Mac%20App/README%20for%20Mac%20App.EN.md)をクリック。
-iOSアプリのREADMEファイルにアクセスするには[ここ](https://github.com/KOUTAN-App-Builders/MeDeX/tree/main/MeDeX%20Documentation/README%20Files%20for%20iOS%20App/README%20for%20iOS%20App.EN.md)をクリック。
-**Swift Package Data ManagerのREADMEファイルは未作成です。必要になったら作成します。**
+- MacアプリのREADMEファイルにアクセスするには [ここ](https://github.com/KOUTAN-App-Builders/MeDeX/tree/main/MeDeX%20Documentation/README%20Files%20for%20Mac%20App/README%20for%20Mac%20App.EN.md)をクリック。
+- iOSアプリのREADMEファイルにアクセスするには[ここ](https://github.com/KOUTAN-App-Builders/MeDeX/tree/main/MeDeX%20Documentation/README%20Files%20for%20iOS%20App/README%20for%20iOS%20App.EN.md)をクリック。
+- **Swift Package Data ManagerのREADMEファイルは未作成です。必要になったら作成します。**
 
 
 ## **[参考]**
@@ -55,8 +71,8 @@ iOSアプリのREADMEファイルにアクセスするには[ここ](https://git
 
 ## **[開発者より]**
 このレポジトリを訪問いただき、ありがとうございます！
-私は2026年春から大学に入学する学生です。
-また、'Swift'を学んでおり、このプロジェクトは私の最初のプロジェクトの一つです。
+私は2026年春に大学に入学した学生です。
+また、`Swift`を学んでおり、このプロジェクトは私の最初のプロジェクトの一つです。
 私はこのアプリをChatGPTのサポートのもと作成し、様々な問題に直面しましたが、macOSアプリのUIはほぼ完成しています！
 医療業界で働いていて、このアプリのご使用を検討されている方は gikou21doc@gmail.com までご連絡ください。 
 このアプリを私と同じように楽しんでいただければ幸いです。開発者の皆様が素晴らしい開発体験を得られることを願っています。

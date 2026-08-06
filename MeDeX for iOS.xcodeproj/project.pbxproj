@@ -10,6 +10,10 @@
 		3B4451BC2F73E88D0009C4E1 /* New Patient Credential Registration View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4451BB2F73E88D0009C4E1 /* New Patient Credential Registration View.swift */; };
 		3B4451BE2F73E8D50009C4E1 /* Doctor Home View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4451BD2F73E8D50009C4E1 /* Doctor Home View.swift */; };
 		3B4451C02F73E9E60009C4E1 /* Patient Home View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4451BF2F73E9E60009C4E1 /* Patient Home View.swift */; };
+		3B4FEC4D3024839C002E9ED8 /* New Appointment View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4FEC4C3024839C002E9ED8 /* New Appointment View.swift */; };
+		3B4FEC4F30248459002E9ED8 /* New Consultation Req View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4FEC4E30248459002E9ED8 /* New Consultation Req View.swift */; };
+		3B4FEC51302487F9002E9ED8 /* Appointment Detail View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4FEC50302487F9002E9ED8 /* Appointment Detail View.swift */; };
+		3B4FEC533024880C002E9ED8 /* Clinical Record Detail View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4FEC523024880C002E9ED8 /* Clinical Record Detail View.swift */; };
 		3B9D185F2F71373F0048A9C3 /* Network Setup View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9D185E2F71373F0048A9C3 /* Network Setup View.swift */; };
 		3BB082162F75233F00875AD0 /* New Patient Detail Registration View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB082152F75233F00875AD0 /* New Patient Detail Registration View.swift */; };
 		3C65E6F32D3FED3C006E32F2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C65E6F02D3FED3C006E32F2 /* ContentView.swift */; };
@@ -27,6 +31,10 @@
 		3B4451BB2F73E88D0009C4E1 /* New Patient Credential Registration View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "New Patient Credential Registration View.swift"; sourceTree = "<group>"; };
 		3B4451BD2F73E8D50009C4E1 /* Doctor Home View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Doctor Home View.swift"; sourceTree = "<group>"; };
 		3B4451BF2F73E9E60009C4E1 /* Patient Home View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Patient Home View.swift"; sourceTree = "<group>"; };
+		3B4FEC4C3024839C002E9ED8 /* New Appointment View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "New Appointment View.swift"; sourceTree = "<group>"; };
+		3B4FEC4E30248459002E9ED8 /* New Consultation Req View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "New Consultation Req View.swift"; sourceTree = "<group>"; };
+		3B4FEC50302487F9002E9ED8 /* Appointment Detail View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Appointment Detail View.swift"; sourceTree = "<group>"; };
+		3B4FEC523024880C002E9ED8 /* Clinical Record Detail View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Clinical Record Detail View.swift"; sourceTree = "<group>"; };
 		3B9D185E2F71373F0048A9C3 /* Network Setup View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Network Setup View.swift"; sourceTree = "<group>"; };
 		3BB082152F75233F00875AD0 /* New Patient Detail Registration View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "New Patient Detail Registration View.swift"; sourceTree = "<group>"; };
 		3C65E6DC2D3FED2D006E32F2 /* MeDeX for iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MeDeX for iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +147,10 @@
 			children = (
 				3C7A11642F55A029009E882A /* Patient Login View.swift */,
 				3B4451BF2F73E9E60009C4E1 /* Patient Home View.swift */,
+				3B4FEC4C3024839C002E9ED8 /* New Appointment View.swift */,
+				3B4FEC4E30248459002E9ED8 /* New Consultation Req View.swift */,
+				3B4FEC50302487F9002E9ED8 /* Appointment Detail View.swift */,
+				3B4FEC523024880C002E9ED8 /* Clinical Record Detail View.swift */,
 				3B4451BA2F73E85E0009C4E1 /* Patient Account Creation Views */,
 			);
 			path = "Patient View";
@@ -224,10 +236,14 @@
 				3C7A115F2F5597AD009E882A /* Welcome View.swift in Sources */,
 				3B4451BC2F73E88D0009C4E1 /* New Patient Credential Registration View.swift in Sources */,
 				3B4451BE2F73E8D50009C4E1 /* Doctor Home View.swift in Sources */,
+				3B4FEC51302487F9002E9ED8 /* Appointment Detail View.swift in Sources */,
 				3C7A11592F55971B009E882A /* Sample Preview Data Models.swift in Sources */,
+				3B4FEC4F30248459002E9ED8 /* New Consultation Req View.swift in Sources */,
 				3B9D185F2F71373F0048A9C3 /* Network Setup View.swift in Sources */,
+				3B4FEC4D3024839C002E9ED8 /* New Appointment View.swift in Sources */,
 				3C65E6F32D3FED3C006E32F2 /* ContentView.swift in Sources */,
 				3C65E6F42D3FED3C006E32F2 /* MeDeX_for_iOSApp.swift in Sources */,
+				3B4FEC533024880C002E9ED8 /* Clinical Record Detail View.swift in Sources */,
 				3C7A11652F55A029009E882A /* Patient Login View.swift in Sources */,
 				3C7A11612F559FE4009E882A /* Doctor Login View.swift in Sources */,
 				3B4451C02F73E9E60009C4E1 /* Patient Home View.swift in Sources */,

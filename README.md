@@ -1,7 +1,10 @@
 # **Welcome to MeDeX!**
 
 This is the BASE file of "README.md".
-Localized versions will be shown above with the language code before ".md". (Ex.: ".EN" , ".JA")
+
+Localized versions of the README file can be accessed from the links below.
+[日本語](README.JA.md) | 
+
 
 ## **[About This Project]**
 - This App is intended to be used in hospitals to manage patient data.
@@ -12,7 +15,8 @@ Localized versions will be shown above with the language code before ".md". (Ex.
 
 
 ## **[App Functionalities]**
-###**(macOS App)**
+### **(macOS App)**
+- The in-hospital server setup view will be implemented in the macOS App.  
 - A SEPARATED login view for admins and doctors.
 - Admin View
   1. Managing doctor data (adding and editing name, password, department)
@@ -24,9 +28,10 @@ Localized versions will be shown above with the language code before ".md". (Ex.
   1. Patients for today view (view with a list of the patients visiting on the day)
   2. Full patient list view (view with a list of all the patients)
   - Details about patients and there medical records are accessible from both views.
+  - Also include a view for medical record entry.
 
 
-###**(iOS App -- not yet made)**
+### **(iOS App -- not yet made)**
 - A SEPARATED login view for doctors and patients.
 - Doctor View
   - Same functionality as the Mac App
@@ -36,25 +41,25 @@ Localized versions will be shown above with the language code before ".md". (Ex.
   3. Answering medical interviews before examination
 
 
-##**[Issues & What to Expect]**
+## **[Issues & What to Expect]**
 **This issues and expected functionalities list will be reset after the next release.**
 - [ ] Completion of the iOS App.
 - [ ] Search for doctors & patients from list.
+- [ ] Implementation of the setup for a LAN shared data system with a server.
 - [ ] Foundation Models Framework implementation for medical record entry support.
 - [ ] MedGemma implementation for finding other possibilities when making a diagnosis.
-- [ ] 
 - [ ] 
 - [ ] 
 
 
 ## **[Links to Each App Project Branch]**
-###**:warning:Important**
-**MeDeX is no longer divided in separate branches and is integrated in the 'main' branch.**
+**:warning:Important**
+**MeDeX is no longer divided in separate branches and is integrated in the `main` branch.**
  
 **Branches linked below aren't in use anymore. Preserved as archives.**
 - Click [here](https://github.com/KOUTAN-App-Builders/MeDeX/tree/MeDeX-iOS-App) to access the iOS App project branch.
 - Click [here](https://github.com/KOUTAN-App-Builders/MeDeX/tree/MeDeX-macOS-App) to access the Mac App project branch.
-- Click [here](https://github.com/KOUTAN-App-Builders/MeDeX/tree/MeDeX-Data-Manager-(Swift-Package) to access the Swift Package for managing data across devices.
+- Click [here](https://github.com/KOUTAN-App-Builders/MeDeX/tree/MeDeX-Data-Manager-(Swift-Package)) to access the Swift Package for managing data across devices.
 
 
 ## **[Links to the README File for each Project: All English]**
@@ -74,8 +79,8 @@ Localized versions will be shown above with the language code before ".md". (Ex.
 
 ## **[Message from the Developer]**
 Thank you for visiting this repository. 
-I'm a Japanese student and will be entering university from spring of 2026.
-I'm also trying to learn 'Swift' and this is one of my first projects. 
+I'm a Japanese student and entered university in spring of 2026.
+I'm also trying to learn `Swift` and this is one of my first projects. 
 I've been making this app with the support by ChatGPT and faced some issues along the way but came to the point where the macOS App UI is almost complete. 
 If you are a person working in the medical industry and consider using this app, please contact me at gikou21doc@gmail.com . 
 I hope you enjoy this app as much as I do and I hope everyone will have a great developer experience!

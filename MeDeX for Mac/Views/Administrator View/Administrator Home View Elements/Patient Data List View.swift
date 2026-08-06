@@ -77,9 +77,9 @@ struct Patient_Data_Detail_View: View {
             }
             HStack{
                 Text("Sex:")
-                TextField("30", text: $patient.Sex)
+                //TextField("Male", text: $patient.Sex)
                 Text("Bloodtype:")
-                TextField("AB", text: $patient.BloodType)
+                //TextField("AB", text: $patient.BloodType)
             }
             Divider()
             Text("Medical records can't be edited here.")

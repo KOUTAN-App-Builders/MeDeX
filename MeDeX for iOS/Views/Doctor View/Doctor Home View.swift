@@ -12,12 +12,18 @@ import MeDeXDataManager
 struct Doctor_Home_View: View {
     
     @Bindable var doctor: Doctor_Data
+    @Query private var patients: [Patient_Data]
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            
+        }
+        .navigationTitle("Hello, \(doctor.UserName)")
     }
 }
 
 #Preview(traits: .sampleData) {
-    Doctor_Home_View(doctor: Doctor_Data(UserName: "Neil Smith", Password: "Password", ClinicalDepartment: [Clinical_Department_Data_Model(id: UUID(), DepartmentName: "Neurology")], RegisteredDate: Date()))
+    NavigationStack{
+        Doctor_Home_View(doctor: Doctor_Data(UserName: "Neil Smith", Password: "Password", ClinicalDepartment: [Clinical_Department_Data_Model(id: UUID(), DepartmentName: "Neurology")], RegisteredDate: Date()))
+    }
 }

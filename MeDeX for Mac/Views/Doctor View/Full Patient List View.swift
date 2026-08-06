@@ -14,11 +14,13 @@ struct Full_Patient_List_View: View {
     @Query(sort: \Patient_Data.Name, order: .forward) private var PatientData: [Patient_Data]
     @Query private var PatientClinicalRecord: [Patient_Clinical_Record]
     @State private var searchName: String = ""
+    @Bindable var doctor: Doctor_Data
+    @Bindable var department: Clinical_Department_Data_Model
     
     var body: some View {
         List(filteredPatients(patients: PatientData, searchName: searchName)){ patient in
             NavigationLink{
-                Patient_Detail_View(patient: patient)
+                Patient_Detail_View(patient: patient, doctor: doctor, department: department)
             }label: {
                 VStack {
                     Text(patient.Name)

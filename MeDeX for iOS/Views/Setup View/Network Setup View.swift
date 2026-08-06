@@ -22,35 +22,32 @@ struct Network_Setup_View: View {
         VStack{
             Form{
                 Section(header: Text("Server Info")){
-                    VStack{
-                        HStack{
-                            Text("IP Address:")
-                            TextField("0.0.0.0", text: $ipAddress)
-                        }
-                        HStack{
-                            Text("Port:")
-                            TextField("80", text: $port)
-                        }
+                    
+                    HStack{
+                        Text("IP Address:")
+                        TextField("0.0.0.0", text: $ipAddress)
+                    }
+                    HStack{
+                        Text("Port:")
+                        TextField("80", text: $port)
                     }
                 }
                 Section(header: Text("Credentials")) {
-                    VStack{
-                        HStack{
-                            Text("User Name:")
-                            TextField("Admin", text: $UserName)
+                    HStack{
+                        Text("User Name:")
+                        TextField("Admin", text: $UserName)
+                    }
+                    HStack{
+                        Text("Password")
+                        if showPassword == true{
+                            TextField("Password", text: $Password)
+                        }else{
+                            SecureField("Password", text: $Password)
                         }
-                        HStack{
-                            Text("Password")
-                            if showPassword == true{
-                                TextField("Password", text: $Password)
-                            }else{
-                                SecureField("Password", text: $Password)
-                            }
-                            Button {
-                                showPassword.toggle()
-                            } label: {
-                                Image(systemName: showPassword ? "eye.slash" : "eye")
-                            }
+                        Button {
+                            showPassword.toggle()
+                        } label: {
+                            Image(systemName: showPassword ? "eye.slash" : "eye")
                         }
                     }
                 }

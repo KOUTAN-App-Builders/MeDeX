@@ -12,6 +12,8 @@ import MeDeXDataManager
 struct Patient_Detail_View: View {
     
     @Bindable var patient: Patient_Data
+    @Bindable var doctor: Doctor_Data
+    @Bindable var department: Clinical_Department_Data_Model
     
     var body: some View {
         VStack{
@@ -54,7 +56,7 @@ struct Patient_Detail_View: View {
                         HStack{
                             Spacer()
                             NavigationLink {
-                                New_Record_Entry_View(patient: patient)
+                                New_Record_Entry_View(patient: patient, doctor: doctor, department: department)
                             } label: {
                                 Image(systemName: "plus")
                             }
@@ -74,6 +76,6 @@ struct Patient_Detail_View: View {
     }
 }
 
-#Preview {
+/*#Preview {
     Patient_Detail_View(patient: Patient_Data(Name: "George Smith", Password: "Password", BirthDate: Date(), Sex: .male, BloodType: .AB, Height: 170.5, Weight: 65.5, PreviousIllnesses: "", finalUpdatedDate: Date()))
-}
+}*/

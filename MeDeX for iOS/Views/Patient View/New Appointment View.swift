@@ -6,13 +6,49 @@
 //
 
 import SwiftUI
+import SwiftData
+import MeDeXDataManager
 
 struct New_Appointment_View: View {
+    
+    //@Bindable var patient: Patient_Data
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            Text("Fill in the following form in order to make a new appointment.")
+            Spacer()
+            Form{
+                Section(header: Text("Patient Info (review only)")){
+                    Text("Name: ")
+                    Text("Birthdate:")
+                    Text("Sex: ")
+                }
+                Section(header: Text("Date and Time")) {
+                    
+                }
+                Section(header: Text("Department and Purpose")) {
+                    
+                }
+            }
+            Button {
+                
+            } label: {
+                Text("Submit")
+                    .bold()
+                    .frame(width: 200, height: 55)
+                    .background(Color.background)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+            }
+            Label("Review your appointment before submitting.", systemImage: "exclamationmark.triangle")
+                .foregroundStyle(Color.red)
+                .bold()
+        }
+        .navigationTitle("New Appointment")
     }
 }
 
 #Preview {
-    New_Appointment_View()
+    NavigationStack{
+        New_Appointment_View()
+    }
 }

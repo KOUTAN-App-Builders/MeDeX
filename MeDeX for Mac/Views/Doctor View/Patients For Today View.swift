@@ -11,6 +11,8 @@ import MeDeXDataManager
 
 struct Patients_For_Today_View: View {
     
+    @Bindable var doctor: Doctor_Data
+    @Bindable var department: Clinical_Department_Data_Model
     @Query private var AppointmentData: [Patient_Appointment_Data_Model]
     init(){
         let startOfDay: Date = Calendar.current.startOfDay(for: .now)
@@ -47,7 +49,7 @@ struct Patients_For_Today_View: View {
             }else{
                 List(PatientsForToday) { patient in
                     NavigationLink {
-                        Patient_Detail_View(patient: patient)
+                        Patient_Detail_View(patient: patient, doctor: doctor, department: department)
                     } label: {
                         VStack{
                             Text(patient.Name)

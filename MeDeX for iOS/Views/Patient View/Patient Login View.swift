@@ -24,16 +24,17 @@ struct Patient_Login_View: View {
         VStack{
             Text("Please type in your credentials to login.")
             HStack{
+                Text("Name: ")
                 TextField("Name", text: $UserName)
                     .frame(width: 200)
             }
             HStack{
                 Text("Pasword:")
                 if showPassword == true{
-                    TextField("", text: $Password)
+                    TextField("Password", text: $Password)
                         .frame(width: 200)
                 }else{
-                    SecureField("", text: $Password)
+                    SecureField("Password", text: $Password)
                         .frame(width: 200)
                 }
                 Button {
@@ -86,6 +87,8 @@ struct Patient_Login_View: View {
     }
 }
 
-#Preview {
-    Patient_Login_View()
+#Preview(traits: .sampleData) {
+    NavigationStack{
+        Patient_Login_View()
+    }
 }
