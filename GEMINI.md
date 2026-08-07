@@ -29,16 +29,16 @@ The project is organized into a workspace containing two main app targets and on
     - Shares identical server setup logic with the Mac app.
 
 ## Development Status & Roadmap
-- **Current State:** The macOS/iOS UI foundations are complete. SwiftData persistence and **Secure Credential Storage** (AppStorage/Keychain) are implemented.
-- **Recent Progress (2026/03/26):**
-    - Refactored `Patient_Data` model: Replaced `Age` with `BirthDate` and introduced `sex` and `bloodType` enums for type safety.
-    - Added `PatientDraft` class in `MeDeXDataManager` using `@Observable` to handle temporary data during patient registration.
-    - Implemented iOS Patient Registration UI: Added credential registration with password confirmation and validation.
-    - Enhanced `Doctor_Login_View` with error handling for failed login attempts.
-- **Next Steps (Phase 1):**
-    - Implement Data Transfer Objects (DTOs) and `Codable` structs for JSON serialization.
-    - Establish the "Contract" between the apps and the future Vapor server.
-    - Create a separate Vapor server project.
+- **Current State:** macOS and iOS UI structures are created. Core SwiftData models, **Secure Credential Storage** (Keychain/AppStorage), and patient registration drafts are in place.
+- **Recent Progress (2026/08/06):**
+    - Cleared compilation and type errors across macOS & iOS views resulting from earlier `Patient_Data` model changes (`BirthDate`, `Sex`, `BloodType` enums).
+    - Formatted and updated project `README.md` files (`README.md`, `README.JA.md`, `README.EN.md`).
+    - Added UI view shells and navigation flows in iOS App (`New_Consultation_Req_View`, `New_Appointment_View`, `Appointment_Detail_View`, `Clinical_Record_Detail_View`, `Patient_Home_View`).
+    - Added sample preview data traits for SwiftUI Previews.
+- **Next Steps:**
+    - **Step 1 (UI Completion & Accessibility):** Fill in missing form controls (`DatePicker`, `Picker`, form state fields) for consultation requests, appointments, patient registration, and detail views. Ensure accessible, user-friendly layouts across iOS and macOS.
+    - **Step 2 (Generative AI Integration):** Implement Foundation Models Framework for medical record entry drafting and MedGemma for diagnostic support.
+    - **Step 3 (Client-Server & Vapor Backend):** Establish DTOs/`Codable` structs, build Vapor server for LAN shared persistence, and handle server setup configuration.
 
 - **Upcoming Expectations**
     - Transition from local-only storage to a LAN-based client-server model.
