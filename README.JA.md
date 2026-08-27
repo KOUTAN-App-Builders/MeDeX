@@ -42,7 +42,7 @@
 - [ ] サーバを用いたLAN内データ共有システムのセットアップの構築。
 - [ ] カルテ入力支援のためのFoundation Models Framework実装。
 - [ ] 診断時に見逃した可能性の発見支援のためのMedGemma実装。
-- [ ] 
+- [ ] 予約用DatePickerの導入。(Adminと医師の設定と他の予約に基づいた空きの確認を可能に)
 - [ ] 
 - [ ] 
 
@@ -65,7 +65,7 @@
 
 
 ## **[参考]**
-- ChatGPT [リンク](https://chatgpt.com)
+- ChatGPT: [リンク](https://chatgpt.com)
 
 **ありがとうございます！**
 

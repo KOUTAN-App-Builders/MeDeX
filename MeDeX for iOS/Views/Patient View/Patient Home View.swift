@@ -55,7 +55,7 @@ struct Patient_Home_View: View {
                         Text("Consult Now")
                     }
                     NavigationLink {
-                        New_Appointment_View()
+                        New_Appointment_View(patient: patient)
                     } label: {
                         Text("New Appointment")
                     }

@@ -30,7 +30,11 @@ The project is organized into a workspace containing two main app targets and on
 
 ## Development Status & Roadmap
 - **Current State:** macOS and iOS UI structures are created. Core SwiftData models, **Secure Credential Storage** (Keychain/AppStorage), and patient registration drafts are in place.
-- **Recent Progress (2026/08/06):**
+- **Recent Progress (2026/08/27):**
+    - Implemented iOS patient appointment booking flow in `New_Appointment_View.swift` (dynamic patient info binding, `DatePicker`, department/doctor pickers via `@Query`, reason `TextField`, and appointment instantiation).
+    - Structured `Appointment_Detail_View.swift` and `Clinical_Record_Detail_View.swift` with `Form` containers.
+    - Added department state to `New_Consultation_Req_View.swift`.
+- **Previous Progress (2026/08/06):**
     - Cleared compilation and type errors across macOS & iOS views resulting from earlier `Patient_Data` model changes (`BirthDate`, `Sex`, `BloodType` enums).
     - Formatted and updated project `README.md` files (`README.md`, `README.JA.md`, `README.EN.md`).
     - Added UI view shells and navigation flows in iOS App (`New_Consultation_Req_View`, `New_Appointment_View`, `Appointment_Detail_View`, `Clinical_Record_Detail_View`, `Patient_Home_View`).

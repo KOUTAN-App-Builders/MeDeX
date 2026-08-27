@@ -37,18 +37,16 @@ The developer is a university student learning Swift and SwiftUI.
    - **Submission Logic:** Create consultation request instance and handle form dismissal.
 
 2. **`New_Appointment_View.swift`**
-   - **Patient Info Section:** Bind to active `patient` data dynamically (Name, Birthdate, Sex).
-   - **Date and Time Section:** Add `DatePicker` for selecting appointment date & time slot.
-   - **Department and Purpose Section:** Add `Picker` populated with departments (`Clinical_Department_Data_Model`) and visit reason input (`TextField`).
-   - **Submission Logic:** Insert new `Patient_Appointment_Data_Model` into SwiftData context.
+   - **Progress:** Bound dynamic `patient` info, added `DatePicker` for appointment date/time, added department & doctor `Picker`s (`@Query`), added appointment purpose `TextField`, and created `addNewAppointment()` helper.
+   - **Next:** Insert `newAppointment` into SwiftData `modelContext`, dismiss view on submit, and handle schedule availability checks.
 
 3. **`Appointment_Detail_View.swift`**
-   - Replace `Text("Hello, World!")` placeholder.
-   - Build a structured card view displaying appointment status, scheduled date/time, department name, assigned doctor, visit reason, and cancel/reschedule actions.
+   - Converted placeholder to `Form` structure.
+   - **Next:** Build structured card view displaying appointment status, scheduled date/time, department name, assigned doctor, visit reason, and cancel/reschedule actions.
 
 4. **`Clinical_Record_Detail_View.swift`**
-   - Replace `Text("Hello, World!")` placeholder.
-   - Display full clinical record details: diagnosis, symptoms, prescribed medications/dosage, treating doctor, department, and examination date.
+   - Converted placeholder to `Form` structure.
+   - **Next:** Display full clinical record details: diagnosis, symptoms, prescribed medications/dosage, treating doctor, department, and examination date.
 
 5. **`New_Patient_Detail_Registration_View.swift`**
    - Build form for `patientDraft` containing: BirthDate (`DatePicker`), Sex (`Picker` for `.male`, `.female`, `.other`), Blood Type (`Picker`), Height (`TextField`), Weight (`TextField`), and Medical History (`TextEditor`).
@@ -77,3 +75,4 @@ The developer is a university student learning Swift and SwiftUI.
 
 - **2026/08/06:** Cleared compiler errors after data model refactoring. Updated project README files. Created iOS UI shells (`New_Consultation_Req_View`, `New_Appointment_View`, `Appointment_Detail_View`, `Clinical_Record_Detail_View`, `Patient_Home_View`).
 - **2026/08/07:** Created `AGENTS.md` and updated `GEMINI.md` with project progress and detailed UI completion requirements.
+- **2026/08/27:** Implemented appointment creation form in `New_Appointment_View.swift` (dynamic patient info, DatePicker, doctor/department pickers, reason input). Replaced raw placeholders with `Form` containers in `Appointment_Detail_View` and `Clinical_Record_Detail_View`. Added department state in `New_Consultation_Req_View`.

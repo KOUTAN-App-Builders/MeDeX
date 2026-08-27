@@ -14,7 +14,9 @@ struct Clinical_Record_Detail_View: View {
     @Bindable var clinical_record: Patient_Clinical_Record
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Form{
+            
+        }
     }
 }
 

@@ -11,7 +11,14 @@ import MeDeXDataManager
 
 struct New_Appointment_View: View {
     
-    //@Bindable var patient: Patient_Data
+    @Bindable var patient: Patient_Data
+    @State private var appointmentDate: Date = Date()
+    @State private var appointmentReason: String = ""
+    @Query private var doctors: [Doctor_Data]
+    @State private var doctor: Doctor_Data? = nil
+    @Query private var departments: [Clinical_Department_Data_Model]
+    @State private var selectedDepartment: Clinical_Department_Data_Model? = nil
+    
     
     var body: some View {
         VStack{
@@ -19,19 +26,43 @@ struct New_Appointment_View: View {
             Spacer()
             Form{
                 Section(header: Text("Patient Info (review only)")){
-                    Text("Name: ")
-                    Text("Birthdate:")
-                    Text("Sex: ")
+                    Text("Name: \(patient.Name)")
+                    Text("Birthdate: \(patient.BirthDate, style: .date)")
+                    Text("Sex: \(patient.Sex.rawValue)")
                 }
                 Section(header: Text("Date and Time")) {
-                    
+                    DatePicker("Select an appointment date.", selection: $appointmentDate)
+                        .datePickerStyle(.automatic)
                 }
                 Section(header: Text("Department and Purpose")) {
-                    
+                    HStack{
+                        Text("Department: ")
+                        Picker("", selection: $selectedDepartment) {
+                            List(departments) { dep in
+                                Text(dep.DepartmentName)
+                            }
+                        }
+                    }
+                    HStack{
+                        Text("Doctor: ")
+                        Picker("", selection: $doctor) {
+                            List(doctors) { doctor in
+                                Text("Dr. \(doctor.UserName)")
+                            }
+                        }
+                    }
+                    HStack{
+                        Text("Purpose of appointment:")
+                        TextField("examination result review", text: $appointmentReason)
+                            .frame(width: 200, height: 55)
+                            .backgroundStyle(Color.black.opacity(0.1))
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                            .padding()
+                    }
                 }
             }
             Button {
-                
+                addNewAppointment()
             } label: {
                 Text("Submit")
                     .bold()
@@ -45,10 +76,13 @@ struct New_Appointment_View: View {
         }
         .navigationTitle("New Appointment")
     }
+    func addNewAppointment(){
+        let newAppointment = Patient_Appointment_Data_Model(appointmentId: UUID(), patient: patient, appointmentDate: appointmentDate, appointmentReason: appointmentReason, appointmentDoctor: doctor!, appointmentClinicalDepartment: selectedDepartment!, appointmentNote: "", isAnEmergency: false)
+    }
 }
 
-#Preview {
+/*#Preview {
     NavigationStack{
         New_Appointment_View()
     }
-}
+}*/

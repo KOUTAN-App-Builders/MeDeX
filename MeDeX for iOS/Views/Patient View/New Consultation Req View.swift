@@ -12,6 +12,8 @@ import MeDeXDataManager
 struct New_Consultation_Req_View: View {
     
     //@Bindable var patient: Patient_Data
+    @Query private var departments: [Clinical_Department_Data_Model]
+    @State private var selectedDepartment: Clinical_Department_Data_Model? = nil
     
     var body: some View {
         VStack{

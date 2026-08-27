@@ -48,7 +48,7 @@ Localized versions of the README file can be accessed from the links below.
 - [ ] Implementation of the setup for a LAN shared data system with a server.
 - [ ] Foundation Models Framework implementation for medical record entry support.
 - [ ] MedGemma implementation for finding other possibilities when making a diagnosis.
-- [ ] 
+- [ ] Implementing an appointment DatePicker. (available based on the admin's & doctors' configuration and other appointments)
 - [ ] 
 
 
