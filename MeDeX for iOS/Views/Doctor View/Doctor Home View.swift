@@ -16,7 +16,14 @@ struct Doctor_Home_View: View {
     
     var body: some View {
         VStack{
-            
+            TabView{
+                Tab("Patients Today", systemImage: "calendar.today") {
+                    Patients_for_Today_View()
+                }
+                Tab("All Patients", systemImage: "folder.badge.person.crop") {
+                    Full_Patient_List_View()
+                }
+            }
         }
         .navigationTitle("Hello, \(doctor.UserName)")
     }
