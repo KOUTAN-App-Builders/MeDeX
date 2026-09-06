@@ -31,10 +31,8 @@ The developer is a university student learning Swift and SwiftUI.
 
 ### 📱 `MeDeX for iOS` Tasks
 1. **`New_Consultation_Req_View.swift`**
-   - **Basic Information Section:** Add chief complaint input (`TextField`), onset date picker (`DatePicker`), and severity/urgency selector (`Picker`).
-   - **Detailed Condition Section:** Add symptoms description (`TextEditor`), fever/temperature field, and pain level scale (`Picker`/`Slider`).
-   - **Your Current Situation Section:** Add current medications field (`TextEditor`), known allergies field, and recent travel/exposure notes.
-   - **Submission Logic:** Create consultation request instance and handle form dismissal.
+   - **Progress:** Created `Consultation_Request_Data` SwiftData model in package. Bound `patient` info, added vital signs fields (BP high/low, heart rate, temperature), symptoms `TextEditor`, emergency checkbox toggle, and SwiftData insertion + dismiss logic (`saveConsulationRequest()`).
+   - **Next:** Add predefined symptom list/tag selection and doctor/department picker selection.
 
 2. **`New_Appointment_View.swift`**
    - **Progress:** Bound dynamic `patient` info, added `DatePicker` for appointment date/time, added department & doctor `Picker`s (`@Query`), added appointment purpose `TextField`, and created `addNewAppointment()` helper.
@@ -53,7 +51,8 @@ The developer is a university student learning Swift and SwiftUI.
    - Add save button to create final `Patient_Data` model and insert into `modelContext`.
 
 6. **`Doctor_Home_View.swift` (iOS)**
-   - Populate view with Today's Appointments list (`@Query`), patient quick search, and recent clinical records summary.
+   - Added `TabView` with "Patients Today" and "All Patients" tabs (`Patients_for_Today_View`, `Full_Patient_List_View`).
+   - **Next:** Populate lists with `@Query` data, patient quick search, and recent clinical records summary.
 
 ---
 
@@ -76,3 +75,4 @@ The developer is a university student learning Swift and SwiftUI.
 - **2026/08/06:** Cleared compiler errors after data model refactoring. Updated project README files. Created iOS UI shells (`New_Consultation_Req_View`, `New_Appointment_View`, `Appointment_Detail_View`, `Clinical_Record_Detail_View`, `Patient_Home_View`).
 - **2026/08/07:** Created `AGENTS.md` and updated `GEMINI.md` with project progress and detailed UI completion requirements.
 - **2026/08/27:** Implemented appointment creation form in `New_Appointment_View.swift` (dynamic patient info, DatePicker, doctor/department pickers, reason input). Replaced raw placeholders with `Form` containers in `Appointment_Detail_View` and `Clinical_Record_Detail_View`. Added department state in `New_Consultation_Req_View`.
+- **2026/09/06:** Implemented `Consultation_Request_Data` SwiftData model in `MeDeXDataManager`. Built consultation questionnaire form in `New_Consultation_Req_View.swift` (patient info, vital signs inputs, symptoms editor, emergency toggle, SwiftData saving, and view dismissal). Added `TabView` with `Patients_for_Today_View` and `Full_Patient_List_View` to iOS `Doctor_Home_View.swift`.

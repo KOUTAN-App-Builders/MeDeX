@@ -50,7 +50,7 @@ struct Patient_Home_View: View {
             ToolbarItem(placement: .topBarTrailing) {
                 Menu("", systemImage: "plus") {
                     NavigationLink {
-                        New_Consultation_Req_View()
+                        New_Consultation_Req_View(patient: patient)
                     } label: {
                         Text("Consult Now")
                     }

@@ -49,7 +49,8 @@ Localized versions of the README file can be accessed from the links below.
 - [ ] Foundation Models Framework implementation for medical record entry support.
 - [ ] MedGemma implementation for finding other possibilities when making a diagnosis.
 - [ ] Implementing an appointment DatePicker. (available based on the admin's & doctors' configuration and other appointments)
-- [ ] 
+- [ ] Adding a symptom list for the patient consultation request view. (iOS) 
+- [ ]
 
 
 ## **[Links to Each App Project Branch]**

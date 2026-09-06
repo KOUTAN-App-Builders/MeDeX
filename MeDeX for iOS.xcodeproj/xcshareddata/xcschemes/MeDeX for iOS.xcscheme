@@ -17,6 +17,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3C65E6DB2D3FED2D006E32F2"
                BuildableName = "MeDeX for iOS.app"
+               BlueprintName = "MeDeX for iOS"
                ReferencedContainer = "container:MeDeX for iOS.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,6 +47,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3C65E6DB2D3FED2D006E32F2"
             BuildableName = "MeDeX for iOS.app"
+            BlueprintName = "MeDeX for iOS"
             ReferencedContainer = "container:MeDeX for iOS.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -62,6 +64,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3C65E6DB2D3FED2D006E32F2"
             BuildableName = "MeDeX for iOS.app"
+            BlueprintName = "MeDeX for iOS"
             ReferencedContainer = "container:MeDeX for iOS.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
