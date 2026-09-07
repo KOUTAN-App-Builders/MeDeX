@@ -34,7 +34,7 @@ struct Patient_Home_View: View {
                 Section("Previous Records") {
                     List(Records){ rec in
                         NavigationLink {
-                            Clinical_Record_Detail_View(clinical_record: rec)
+                            Clinical_Record_Detail_View(record: rec)
                         } label: {
                             Text(rec.Diagnosis)
                                 .font(.title)
@@ -65,7 +65,7 @@ struct Patient_Home_View: View {
     }
 }
 
-#Preview {
+#Preview(traits: .sampleData) {
     NavigationStack{
         Patient_Home_View(patient: Patient_Data(Name: "John Doe", Password: "Password", BirthDate: Date(), Sex: .male, BloodType: .AB, Height: 175.5, Weight: 65.5, PreviousIllnesses: "N/A", finalUpdatedDate: Date()))
     }

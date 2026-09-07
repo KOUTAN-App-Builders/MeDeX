@@ -16,14 +16,20 @@ struct New_Consultation_Req_View: View {
     @Bindable var patient: Patient_Data
     @State private var selectedDepartment: Clinical_Department_Data_Model? = nil
     @State private var selectedDoctor: Doctor_Data? = nil
-    @State private var bodyTemperature: Double = 0
-    @State private var bloodPressure_High: Int = 0
-    @State private var bloodPressure_Low: Int = 0
-    @State private var heartrate: Int = 0
+    @State private var bodyTemperature: Double? = nil
+    @State private var bloodPressure_High: Int? = nil
+    @State private var bloodPressure_Low: Int? = nil
+    @State private var heartrate: Int? = nil
     @State private var Symptoms: String = ""
     @State private var isUrgent: Bool = false
     @Environment(\.modelContext) var context
     @Environment(\.dismiss) var dismiss
+    
+    @State private var numberFormatter: NumberFormatter = {
+        var numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        return numberFormatter
+    }()
     
     var body: some View {
         VStack{
@@ -33,41 +39,42 @@ struct New_Consultation_Req_View: View {
                 Section(header: Text("About you (make sure this is your information)")){
                     Text(patient.Name)
                     Text(patient.BirthDate, style: .date)
-                    //Text(patient.Height)
-                    //Text(patient.Weight)
+                    Text(patient.Height, format: .number)
+                    Text(patient.Weight, format: .number)
                 }
                 Section(header: Text("Detailed Condition")){
                     HStack{
                         Text("Blood Pressure (high): ")
-                        TextField("125", text: $bloodPressure_High)
-                            .keyboardType(.decimalPad)
+                        TextField(125.description, value: $bloodPressure_High, formatter: numberFormatter)
+                            .keyboardType(.numberPad)
                     }
                     HStack{
                         Text("Blood Pressure (low): ")
-                        TextField("85", text: $bloodPressure_Low)
-                            .keyboardType(.decimalPad)
+                        TextField(85.description, value: $bloodPressure_Low, formatter: numberFormatter)
+                            .keyboardType(.numberPad)
                     }
                     HStack{
                         Text("Heartrate: ")
-                        TextField("90", text: $heartrate)
-                            .keyboardType(.decimalPad)
+                        TextField(90.description, value: $heartrate, formatter: numberFormatter)
+                            .keyboardType(.numberPad)
                     }
                     HStack{
                         Text("Body Temperature: ")
-                        TextField("36.5", text: $bodyTemperature)
+                        TextField(36.5.description, value: $bodyTemperature, formatter: numberFormatter)
+                            .keyboardType(.decimalPad)
                     }
                 }
                 Section(header: Text("Your Current Situation")){
                     HStack{
                         Text("Symptoms: ")
-                        TextEditor("Please write down your symptoms here.", text: $Symptoms)
+                        TextEditor(text: $Symptoms)
                     }
                     HStack{
                         Button {
                             isUrgent.toggle()
                         } label: {
                             Image(systemName: isUrgent ? "checkmark.square.fill" : "checkmark.square")
-                                .symbolEffect(.drawOn)
+                                //.symbolEffect(.drawOn) <- Will be fixed in future version.
                                 .backgroundStyle(Color.blue)
                                 .foregroundStyle(Color.white)
                         }
@@ -90,13 +97,13 @@ struct New_Consultation_Req_View: View {
         .navigationTitle("New Consultation")
     }
     func saveConsulationRequest(){
-        let newRequest = Consultation_Request_Data(requestDate: Date(), patient: patient, department: selectedDepartment!, doctor: selectedDoctor!, bloodPressure_High: bloodPressure_High, bloodPressure_Low: bloodPressure_Low, heartrate: heartrate,bodyTemperature: bodyTemperature, symptoms: Symptoms, isUrgent: isUrgent)
+        let newRequest = Consultation_Request_Data(requestDate: Date(), patient: patient, department: selectedDepartment!, doctor: selectedDoctor!, bloodPressure_High: bloodPressure_High!, bloodPressure_Low: bloodPressure_Low!, heartrate: heartrate!, bodyTemperature: bodyTemperature!, symptoms: Symptoms, isUrgent: isUrgent)
         context.insert(newRequest)
     }
 }
 
-#Preview {
+#Preview(traits: .sampleData) {
     NavigationStack{
-        New_Consultation_Req_View()
+        New_Consultation_Req_View(patient: Patient_Data(Name: "John Doe", Password: "SamplePassword1", BirthDate: Date(), Sex: .male, BloodType: .A, Height: 173.1, Weight: 72.3, PreviousIllnesses: "None", finalUpdatedDate: Date()))
     }
 }

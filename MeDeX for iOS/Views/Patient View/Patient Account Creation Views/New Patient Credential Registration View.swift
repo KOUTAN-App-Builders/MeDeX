@@ -11,6 +11,7 @@ import MeDeXDataManager
 struct New_Patient_Credential_Registration_View: View {
     
     @Bindable var patientDraft: PatientDraft
+    @Binding var showSheet: Bool
     @State private var showPassword: Bool = false
     @State private var Password: String = ""
     @State private var PasswordConfirmation: String = ""
@@ -18,6 +19,7 @@ struct New_Patient_Credential_Registration_View: View {
     @Environment(\.dismiss) var Dismiss
     @State private var passwordMatched: Bool = false
     @State private var passwordMatchError: Bool = false
+    @State private var progress: Double = 0.33
     
     var body: some View {
         VStack{
@@ -90,10 +92,17 @@ struct New_Patient_Credential_Registration_View: View {
                 }
                 .disabled(patientDraft.Name.isEmpty || Password.isEmpty || PasswordConfirmation.isEmpty)
             }
+            HStack{
+                Spacer()
+                Text("Progress: 1 / 3")
+                Spacer()
+            }
+            ProgressView(value: progress)
+                .padding()
         }
         .navigationTitle("Add Credentials")
         .navigationDestination(isPresented: $passwordMatched) {
-            New_Patient_Detail_Registration_View(patientDraft: patientDraft)
+            New_Patient_Detail_Registration_View(patientDraft: patientDraft, showSheet: $showSheet)
         }
     }
     func checkPasswordMatch() {

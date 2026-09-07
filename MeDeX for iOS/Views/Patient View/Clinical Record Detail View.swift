@@ -11,11 +11,21 @@ import MeDeXDataManager
 
 struct Clinical_Record_Detail_View: View {
     
-    @Bindable var clinical_record: Patient_Clinical_Record
+    @Bindable var record: Patient_Clinical_Record
     
     var body: some View {
         Form{
-            
+            Section("Your Information (Make sure this is correct)") {
+                Text("Patient Name: \(record.Patient.Name)")
+                Text("Department: \(record.ClinicalDepartment.DepartmentName)")
+                Text("Doctor: \(record.Doctor.UserName)")
+                Text("Date: ") + Text(record.Date, format: .dateTime)
+            }
+            Section("Details") {
+                Text("Symptoms: \(record.Symptoms)")
+                Text("Diagnosis: \(record.Diagnosis)")
+                Text("Prescription: \(record.Prescription)")
+            }
         }
     }
 }

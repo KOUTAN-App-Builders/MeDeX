@@ -73,7 +73,7 @@ struct Patient_Login_View: View {
         }
         .sheet(isPresented: $showSheet) {
             NavigationStack{
-                New_Patient_Credential_Registration_View(patientDraft: draft)
+                New_Patient_Credential_Registration_View(patientDraft: draft, showSheet: $showSheet)
             }
         }
         .padding()

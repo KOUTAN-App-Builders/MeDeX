@@ -30,14 +30,14 @@ The project is organized into a workspace containing two main app targets and on
 
 ## Development Status & Roadmap
 - **Current State:** macOS and iOS UI structures are created. Core SwiftData models, **Secure Credential Storage** (Keychain/AppStorage), and patient registration drafts are in place.
-- **Recent Progress (2026/09/06):**
+- **Recent Progress (2026/09/07):**
+    - Built complete multi-step patient registration wizard (`New_Patient_Credential_Registration_View`, `New_Patient_Detail_Registration_View`, `New_Patient_Record_Registration_View`, `New_Patient_Confirmation_View`) with `ProgressView`, return-and-edit navigation, and SwiftData persistence.
+    - Completed structured `Form` content for `Appointment_Detail_View.swift` and `Clinical_Record_Detail_View.swift`.
+    - Integrated `NumberFormatter` across registration and consultation request numeric fields.
+- **Previous Progress (2026/09/06):**
     - Implemented `Consultation_Request_Data` SwiftData model in `MeDeXDataManager`.
     - Built consultation questionnaire in `New_Consultation_Req_View.swift` (patient info, vital signs inputs, symptoms editor, emergency toggle, SwiftData saving, and view dismissal).
     - Added `TabView` with `Patients_for_Today_View` and `Full_Patient_List_View` to iOS `Doctor_Home_View.swift`.
-- **Previous Progress (2026/08/27):**
-    - Implemented iOS patient appointment booking flow in `New_Appointment_View.swift` (dynamic patient info binding, `DatePicker`, department/doctor pickers via `@Query`, reason `TextField`, and appointment instantiation).
-    - Structured `Appointment_Detail_View.swift` and `Clinical_Record_Detail_View.swift` with `Form` containers.
-    - Added department state to `New_Consultation_Req_View.swift`.
 - **Next Steps:**
     - **Step 1 (UI Completion & Accessibility):** Fill in missing form controls (`DatePicker`, `Picker`, form state fields) for consultation requests, appointments, patient registration, and detail views. Ensure accessible, user-friendly layouts across iOS and macOS.
     - **Step 2 (Generative AI Integration):** Implement Foundation Models Framework for medical record entry drafting and MedGemma for diagnostic support.

@@ -81,8 +81,8 @@ struct New_Appointment_View: View {
     }
 }
 
-/*#Preview {
+#Preview(traits: .sampleData) {
     NavigationStack{
-        New_Appointment_View()
+        New_Appointment_View(patient: Patient_Data(Name: "John Doe", Password: "SamplePassword1", BirthDate: Date(), Sex: .male, BloodType: .A, Height: 173.1, Weight: 73.2, PreviousIllnesses: "None", finalUpdatedDate: Date()))
     }
-}*/
+}

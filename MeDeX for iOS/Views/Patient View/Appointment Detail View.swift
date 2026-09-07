@@ -15,7 +15,16 @@ struct Appointment_Detail_View: View {
     
     var body: some View {
         Form{
-            
+            Section("Appointment Info") {
+                Text("Patient: \(appointment.patient.Name)")
+                Text("Department: \(appointment.appointmentClinicalDepartment.DepartmentName)")
+                Text("Doctor: \(appointment.appointmentDoctor.UserName)")
+                Text("Date: ") + Text(appointment.appointmentDate, format: .dateTime)
+            }
+            Section("Details") {
+                Text("Purpose: \(appointment.appointmentReason)")
+                Text("Is it an emergency?") + Text(appointment.isAnEmergency ? "Yes" : "No")
+            }
         }
     }
 }
