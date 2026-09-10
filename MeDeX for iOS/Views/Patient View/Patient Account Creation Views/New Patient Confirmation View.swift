@@ -61,7 +61,17 @@ struct New_Patient_Confirmation_View: View {
                 } label: {
                     Image(systemName: didCheck ? "checkmark.square.fill" : "square")
                 }
-                Text("I checked all the information and agree to the terms and conditions.") //planning to add a link to the words "the terms and conditions", to explain data usage
+                HStack(spacing: 4){
+                    Text("I checked all the information and agree to ")
+                    NavigationLink {
+                        Terms_and_Conditions_View()
+                    } label: {
+                        Text("the terms and conditions")
+                            .foregroundStyle(Color.blue)
+                            .underline()
+                    }
+                    Text(".")
+                }
             }
             Button {
                 savePatientData()

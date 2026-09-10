@@ -35,8 +35,8 @@ The developer is a university student learning Swift and SwiftUI.
    - **Next:** Add predefined symptom list/tag selection and doctor/department picker selection.
 
 2. **`New_Appointment_View.swift`**
-   - **Progress:** Bound dynamic `patient` info, added `DatePicker` for appointment date/time, added department & doctor `Picker`s (`@Query`), added appointment purpose `TextField`, and created `addNewAppointment()` helper.
-   - **Next:** Insert `newAppointment` into SwiftData `modelContext`, dismiss view on submit, and handle schedule availability checks.
+   - **Progress:** Bound dynamic `patient` info, added `DatePicker` for appointment date/time, added department & doctor `Picker`s (`@Query`), added appointment purpose `TextField`, `addNewAppointment()` SwiftData insertion, and view dismissal (`dismiss()`).
+   - **Next:** Handle schedule availability checks against doctor/department calendar.
 
 3. **`Appointment_Detail_View.swift`**
    - **Progress:** Built structured card view with `Form` displaying patient name, department, doctor, scheduled date/time, visit purpose, and emergency status.
@@ -51,12 +51,16 @@ The developer is a university student learning Swift and SwiftUI.
      - Step 1: Credential registration (`New_Patient_Credential_Registration_View`).
      - Step 2: Personal details with `DatePicker` for birthdate, `Picker`s for sex and blood type, `TextField`s with `NumberFormatter` for height/weight (`New_Patient_Detail_Registration_View`).
      - Step 3: Special notes / previous illnesses (`New_Patient_Record_Registration_View`).
-     - Confirmation & Save: Review all entered information, return-and-edit navigation links, terms agreement checkbox, SwiftData `Patient_Data` insertion, and sheet dismissal (`New_Patient_Confirmation_View`).
-   - **Next:** Add terms and conditions modal link.
+     - Confirmation & Save: Review all entered information, return-and-edit navigation links, terms agreement checkbox linking to `Terms_and_Conditions_View`, SwiftData `Patient_Data` insertion, and sheet dismissal (`New_Patient_Confirmation_View`).
 
-6. **`Doctor_Home_View.swift` (iOS)**
-   - Added `TabView` with "Patients Today" and "All Patients" tabs (`Patients_for_Today_View`, `Full_Patient_List_View`).
-   - **Next:** Populate lists with `@Query` data, patient quick search, and recent clinical records summary.
+6. **`Doctor_Home_View.swift` & Doctor Workflow Views (iOS)**
+   - **Progress:**
+     - Connected department selector `Picker` and `TabView` ("Patients Today" & "All Patients").
+     - `Patients_for_Today_View`: Lists pending `Consultation_Request_Data` with symptom details and date, navigating to `Patient_Detail_View`.
+     - `Full_Patient_List_View`: Integrated `.searchable` search bar and last visit display.
+     - `Patient_Detail_View`: Displays demographics (age, sex, blood type, height, weight, previous illnesses) and clinical records list.
+     - `New_Record_Entry_View`: Built record creation form (symptoms, diagnosis, prescription) and `addNewRecord()` helper.
+     - Added toolbar items for network settings and logout.
 
 ---
 
@@ -66,7 +70,7 @@ The developer is a university student learning Swift and SwiftUI.
    - Add vital signs entry fields (Blood Pressure, Pulse, Temperature) and follow-up recommendation notes.
 
 2. **Search & Filtering (`.searchable`)**
-   - Add `.searchable` to `Patient_Data_List_View.swift`, `Doctor_Data_List_View.swift`, and `Full_Patient_List_View.swift` to enable searching by name or ID.
+   - Added `.searchable` to `Full_Patient_List_View.swift`, and updated `Patients_For_Today_View.swift` to list `Consultation_Request_Data`. Next: add to `Doctor_Data_List_View.swift` and `Patient_Data_List_View.swift`.
 
 3. **Window Adaptability & Window Management (Phase 2)**
    - Replace static element pixel widths (`.frame(width: 400)`) with flexible container layouts that adjust smoothly to macOS window resizing.
@@ -81,3 +85,4 @@ The developer is a university student learning Swift and SwiftUI.
 - **2026/08/27:** Implemented appointment creation form in `New_Appointment_View.swift` (dynamic patient info, DatePicker, doctor/department pickers, reason input). Replaced raw placeholders with `Form` containers in `Appointment_Detail_View` and `Clinical_Record_Detail_View`. Added department state in `New_Consultation_Req_View`.
 - **2026/09/06:** Implemented `Consultation_Request_Data` SwiftData model in `MeDeXDataManager`. Built consultation questionnaire form in `New_Consultation_Req_View.swift` (patient info, vital signs inputs, symptoms editor, emergency toggle, SwiftData saving, and view dismissal). Added `TabView` with `Patients_for_Today_View` and `Full_Patient_List_View` to iOS `Doctor_Home_View.swift`.
 - **2026/09/07:** Built full multi-step patient registration wizard (Credentials -> Personal Details -> Special Notes -> Confirmation & SwiftData insertion with progress bars and back-navigation). Populated `Appointment_Detail_View` and `Clinical_Record_Detail_View` with structured detail sections. Added number formatters to consultation and registration inputs.
+- **2026/09/10:** Completed iOS Doctor views (`Doctor_Home_View`, `Patients_for_Today_View`, `Full_Patient_List_View`, `Patient_Detail_View`, `New_Record_Entry_View`). Wired SwiftData saving and dismiss logic in `New_Appointment_View`. Added `Terms_and_Conditions_View`. Registered `Consultation_Request_Data` in `Persistence.swift` schema. Updated macOS doctor views to consume consultation requests.

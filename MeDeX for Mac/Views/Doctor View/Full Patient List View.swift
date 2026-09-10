@@ -26,7 +26,7 @@ struct Full_Patient_List_View: View {
                     Text(patient.Name)
                         .font(.title)
                         .bold()
-                    Text("Last visit: ")
+                    Text("Last visit: ") + Text(patient.ClinicalRecord.last!.Date, format: .dateTime)
                 }
             }
             .searchable(text: $searchName)
@@ -40,8 +40,8 @@ struct Full_Patient_List_View: View {
     }
 }
 
-#Preview(traits: .sampleData) {
+/*#Preview(traits: .sampleData) {
     NavigationStack{
         Full_Patient_List_View()
     }
-}
+}*/

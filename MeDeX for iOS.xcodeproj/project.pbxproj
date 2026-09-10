@@ -20,6 +20,9 @@
 		3BB082162F75233F00875AD0 /* New Patient Detail Registration View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB082152F75233F00875AD0 /* New Patient Detail Registration View.swift */; };
 		3BB70A963046D90500C0EC09 /* Patients for Today View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB70A953046D90500C0EC09 /* Patients for Today View.swift */; };
 		3BB70A983046D91600C0EC09 /* Full Patient List View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB70A973046D91600C0EC09 /* Full Patient List View.swift */; };
+		3BD2E7993052A40800A3D974 /* Terms and Conditions View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD2E7983052A40800A3D974 /* Terms and Conditions View.swift */; };
+		3BD2E79B3052AAD500A3D974 /* Patient Detail View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD2E79A3052AAD500A3D974 /* Patient Detail View.swift */; };
+		3BD2E79D3052AD0C00A3D974 /* New Record Entry View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD2E79C3052AD0C00A3D974 /* New Record Entry View.swift */; };
 		3C65E6F32D3FED3C006E32F2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C65E6F02D3FED3C006E32F2 /* ContentView.swift */; };
 		3C65E6F42D3FED3C006E32F2 /* MeDeX_for_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C65E6F12D3FED3C006E32F2 /* MeDeX_for_iOSApp.swift */; };
 		3C65E6F52D3FED3C006E32F2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C65E6ED2D3FED3C006E32F2 /* Preview Assets.xcassets */; };
@@ -45,6 +48,9 @@
 		3BB082152F75233F00875AD0 /* New Patient Detail Registration View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "New Patient Detail Registration View.swift"; sourceTree = "<group>"; };
 		3BB70A953046D90500C0EC09 /* Patients for Today View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Patients for Today View.swift"; sourceTree = "<group>"; };
 		3BB70A973046D91600C0EC09 /* Full Patient List View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Full Patient List View.swift"; sourceTree = "<group>"; };
+		3BD2E7983052A40800A3D974 /* Terms and Conditions View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Terms and Conditions View.swift"; sourceTree = "<group>"; };
+		3BD2E79A3052AAD500A3D974 /* Patient Detail View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Patient Detail View.swift"; sourceTree = "<group>"; };
+		3BD2E79C3052AD0C00A3D974 /* New Record Entry View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "New Record Entry View.swift"; sourceTree = "<group>"; };
 		3C65E6DC2D3FED2D006E32F2 /* MeDeX for iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MeDeX for iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C65E6ED2D3FED3C006E32F2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3C65E6EF2D3FED3C006E32F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -75,6 +81,7 @@
 				3BB082152F75233F00875AD0 /* New Patient Detail Registration View.swift */,
 				3B003960304EB5B300969D6C /* New Patient Record Registration View.swift */,
 				3B003962304EB80E00969D6C /* New Patient Confirmation View.swift */,
+				3BD2E7983052A40800A3D974 /* Terms and Conditions View.swift */,
 			);
 			path = "Patient Account Creation Views";
 			sourceTree = "<group>";
@@ -150,6 +157,8 @@
 				3B4451BD2F73E8D50009C4E1 /* Doctor Home View.swift */,
 				3BB70A953046D90500C0EC09 /* Patients for Today View.swift */,
 				3BB70A973046D91600C0EC09 /* Full Patient List View.swift */,
+				3BD2E79A3052AAD500A3D974 /* Patient Detail View.swift */,
+				3BD2E79C3052AD0C00A3D974 /* New Record Entry View.swift */,
 			);
 			path = "Doctor View";
 			sourceTree = "<group>";
@@ -258,9 +267,12 @@
 				3BB70A983046D91600C0EC09 /* Full Patient List View.swift in Sources */,
 				3B003961304EB5B300969D6C /* New Patient Record Registration View.swift in Sources */,
 				3C65E6F42D3FED3C006E32F2 /* MeDeX_for_iOSApp.swift in Sources */,
+				3BD2E7993052A40800A3D974 /* Terms and Conditions View.swift in Sources */,
 				3B4FEC533024880C002E9ED8 /* Clinical Record Detail View.swift in Sources */,
 				3C7A11652F55A029009E882A /* Patient Login View.swift in Sources */,
+				3BD2E79D3052AD0C00A3D974 /* New Record Entry View.swift in Sources */,
 				3C7A11612F559FE4009E882A /* Doctor Login View.swift in Sources */,
+				3BD2E79B3052AAD500A3D974 /* Patient Detail View.swift in Sources */,
 				3B4451C02F73E9E60009C4E1 /* Patient Home View.swift in Sources */,
 				3B003963304EB80E00969D6C /* New Patient Confirmation View.swift in Sources */,
 				3BB082162F75233F00875AD0 /* New Patient Detail Registration View.swift in Sources */,

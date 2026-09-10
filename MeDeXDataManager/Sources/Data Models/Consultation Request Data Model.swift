@@ -8,6 +8,8 @@
 import Foundation
 import SwiftData
 
+// Will add the capability to link consultation requests with ready-made appointments. Coming soon.
+
 @Model
 public final class Consultation_Request_Data{
     public var id: UUID

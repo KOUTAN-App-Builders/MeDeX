@@ -18,6 +18,8 @@ struct New_Appointment_View: View {
     @State private var doctor: Doctor_Data? = nil
     @Query private var departments: [Clinical_Department_Data_Model]
     @State private var selectedDepartment: Clinical_Department_Data_Model? = nil
+    @Environment(\.modelContext) var context
+    @Environment(\.dismiss) var dismiss
     
     
     var body: some View {
@@ -63,6 +65,7 @@ struct New_Appointment_View: View {
             }
             Button {
                 addNewAppointment()
+                dismiss()
             } label: {
                 Text("Submit")
                     .bold()
@@ -78,6 +81,7 @@ struct New_Appointment_View: View {
     }
     func addNewAppointment(){
         let newAppointment = Patient_Appointment_Data_Model(appointmentId: UUID(), patient: patient, appointmentDate: appointmentDate, appointmentReason: appointmentReason, appointmentDoctor: doctor!, appointmentClinicalDepartment: selectedDepartment!, appointmentNote: "", isAnEmergency: false)
+        context.insert(newAppointment)
     }
 }
 
