@@ -5,7 +5,7 @@
       location = "group:README.md">
    </FileRef>
    <FileRef
-      location = "group:README.EN.md">
+      location = "group:LICENSE.md">
    </FileRef>
    <FileRef
       location = "group:GEMINI.md">
@@ -16,6 +16,36 @@
    <FileRef
       location = "group:README.JA.md">
    </FileRef>
+   <FileRef
+      location = "container:README.DE.md">
+   </FileRef>
+   <FileRef
+      location = "group:README.FR.md">
+   </FileRef>
+   <FileRef
+      location = "group:README.ES.md">
+   </FileRef>
+   <FileRef
+      location = "group:README.zh-CN.md">
+   </FileRef>
+   <Group
+      location = "group:.github"
+      name = ".github">
+      <Group
+         location = "group:workflows"
+         name = "workflows">
+         <FileRef
+            location = "group:README-translation.yml">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:scripts"
+         name = "scripts">
+         <FileRef
+            location = "group:translate_readme.py">
+         </FileRef>
+      </Group>
+   </Group>
    <Group
       location = "group:MeDeX Documentation"
       name = "MeDeX Documentation">

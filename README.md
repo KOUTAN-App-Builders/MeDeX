@@ -1,16 +1,16 @@
-# **Welcome to MeDeX!**
+# **MeDeX**
 
 This is the BASE file of "README.md".
 
 Localized versions of the README file can be accessed from the links below.
-[日本語](README.JA.md) | 
+
+[日本語](README.JA.md) | [Deutsch](README.DE.md) | [Español](README.ES.md) | [Français](README.FR.md) | [简体中文](README.zh-CN.md)
 
 
 ## **[About This Project]**
 - This App is intended to be used in hospitals to manage patient data.
 - This Project mainly consist of two Applications.
 - The Mac App and the iOS App.
-- Localized versions of the README file is linked down below.
 - I hope you find this project useful!
 
 
@@ -31,7 +31,7 @@ Localized versions of the README file can be accessed from the links below.
   - Also include a view for medical record entry.
 
 
-### **(iOS App -- not yet made)**
+### **(iOS App)**
 - A SEPARATED login view for doctors and patients.
 - Doctor View
   - Same functionality as the Mac App
@@ -43,7 +43,7 @@ Localized versions of the README file can be accessed from the links below.
 
 ## **[Issues & What to Expect]**
 **This issues and expected functionalities list will be reset after the next release.**
-- [ ] Completion of the iOS App.
+- [x] Completion of the iOS App.
 - [ ] Search for doctors & patients from list.
 - [ ] Implementation of the setup for a LAN shared data system with a server.
 - [ ] Foundation Models Framework implementation for medical record entry support.
@@ -69,11 +69,6 @@ Localized versions of the README file can be accessed from the links below.
 - **Haven't made a README file for the Swift Package Data Manager yet. Will be made if it becomes necessary.**
 
 
-## **[README Files Provided in Other Languages]**
-- Click here for [English](https://github.com/KOUTAN-App-Builders/MeDeX/blob/main/README.EN.md).
-- Click here for [日本語](https://github.com/KOUTAN-App-Builders/MeDeX/blob/main/README.JA.md).
-
-
 ## **[Big Thanks to:]**
 - ChatGPT [link](https://chatgpt.com)
 
@@ -82,10 +77,17 @@ Localized versions of the README file can be accessed from the links below.
 Thank you for visiting this repository. 
 I'm a Japanese student and entered university in spring of 2026.
 I'm also trying to learn `Swift` and this is one of my first projects. 
+I appreciate it if you wouldn't publish this project as your own or publish it commercially. 
+I may publish this app on the App Store in the future.
 I've been making this app with the support by ChatGPT and faced some issues along the way but came to the point where the macOS App UI is almost complete. 
 If you are a person working in the medical industry and consider using this app, please contact me at gikou21doc@gmail.com . 
+Also, I welcome any feature requests or error/bug report from the developer community! 
+However, since I'm a beginner, I may not be familiar with the fix. All ideas and suggestions helps me a lot and it would mean a lot to me if you can leave a comment (fix method) on the issues / discussions tab.
 I hope you enjoy this app as much as I do and I hope everyone will have a great developer experience!
+
 
 Thanks, 
 KOUTAN-App-Builders
  
+
+    MeDeX  © 2026 by KOUTAN-App-Builders is licensed under CC BY-NC-SA 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/4.0/
