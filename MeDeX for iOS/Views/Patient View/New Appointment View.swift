@@ -73,6 +73,7 @@ struct New_Appointment_View: View {
                     .background(Color.background)
                     .clipShape(RoundedRectangle(cornerRadius: 10))
             }
+            .disabled(doctor == nil || selectedDepartment == nil)
             Label("Review your appointment before submitting.", systemImage: "exclamationmark.triangle")
                 .foregroundStyle(Color.red)
                 .bold()

@@ -13,7 +13,7 @@ struct Doctor_Home_View: View {
     
     @Bindable var doctor: Doctor_Data
     @Query private var patients: [Patient_Data]
-    @State private var selectedDepartment: Clinical_Department_Data_Model
+    @State var selectedDepartment: Clinical_Department_Data_Model? = nil
     
     var body: some View {
         VStack{
@@ -24,10 +24,18 @@ struct Doctor_Home_View: View {
             }
             TabView{
                 Tab("Patients Today", systemImage: "calendar.today") {
-                    Patients_for_Today_View(doctor: doctor, department: selectedDepartment)
+                    if selectedDepartment == nil {
+                        Text("Please select your department.")
+                    }else{
+                        Patients_for_Today_View(doctor: doctor, department: selectedDepartment!)
+                    }
                 }
                 Tab("All Patients", systemImage: "folder.badge.person.crop") {
-                    Full_Patient_List_View(doctor: doctor, department: selectedDepartment)
+                    if selectedDepartment == nil{
+                        Text("Please select your department.")
+                    }else{
+                        Full_Patient_List_View(doctor: doctor, department: selectedDepartment!)
+                    }
                 }
             }
         }

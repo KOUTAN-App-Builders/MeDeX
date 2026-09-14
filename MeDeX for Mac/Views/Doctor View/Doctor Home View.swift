@@ -14,7 +14,7 @@ struct Doctor_Home_View: View {
     @Query private var patients: [Patient_Data]
     @State private var selectedUI: DoctorViewSelector = .Patients_For_Today
     @Bindable var Doctor: Doctor_Data
-    @State var selectedDepartment: Clinical_Department_Data_Model
+    @State var selectedDepartment: Clinical_Department_Data_Model? = nil
     
     var body: some View {
         NavigationStack{
@@ -48,9 +48,19 @@ struct Doctor_Home_View: View {
                 Divider()
                 switch selectedUI {
                 case .Patients_For_Today:
-                    Patients_For_Today_View()
+                    if selectedDepartment == nil {
+                        Text("Please select your department.")
+                            .font(.largeTitle)
+                    }else{
+                        Patients_For_Today_View(doctor: Doctor, department: selectedDepartment!)
+                    }
                 case .Patient_Full_List:
-                    Full_Patient_List_View(doctor: Doctor, department: selectedDepartment)
+                    if selectedDepartment == nil {
+                        Text("Please select your department.")
+                            .font(.largeTitle)
+                    }else{
+                        Full_Patient_List_View(doctor: Doctor, department: selectedDepartment!)
+                    }
                 }
             }
         }

@@ -26,7 +26,11 @@ struct Full_Patient_List_View: View {
                     Text(patient.Name)
                         .font(.title)
                         .bold()
-                    Text("Last visit: ") + Text(patient.ClinicalRecord.last!.Date, format: .dateTime)
+                    if patient.ClinicalRecord.isEmpty{
+                        Text("No record yet")
+                    }else{
+                        Text("Last visit: ") + Text(patient.ClinicalRecord.last!.Date, format: .dateTime)
+                    }
                 }
             }
             .searchable(text: $searchName)

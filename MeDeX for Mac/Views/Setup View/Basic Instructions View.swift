@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct Basic_Instructions_View: View {
+    
+    @AppStorage("isFirstLaunch") var isFirstLaunch: Bool = true
+    @State private var navigation: Bool = false
+    
     var body: some View {
         VStack{
             Text("Setup Complete!")
@@ -49,8 +53,9 @@ struct Basic_Instructions_View: View {
                 }
             }
             .padding(.trailing, 80)
-            NavigationLink {
-                ContentView()
+            Button {
+                navigation = true
+                isFirstLaunch = false
             } label: {
                 Text("Click here to start using MeDeX!")
                     .frame(width: 200, height: 50)
@@ -60,6 +65,9 @@ struct Basic_Instructions_View: View {
             }
         }
         .padding()
+        .navigationDestination(isPresented: $navigation) {
+            ContentView()
+        }
     }
 }
 

@@ -37,10 +37,10 @@ struct New_Consultation_Req_View: View {
             Spacer()
             Form{
                 Section(header: Text("About you (make sure this is your information)")){
-                    Text(patient.Name)
-                    Text(patient.BirthDate, style: .date)
-                    Text(patient.Height, format: .number)
-                    Text(patient.Weight, format: .number)
+                    Text("Name: \(patient.Name)")
+                    Text("Birthdate: \(patient.BirthDate, style: .date)")
+                    Text("Height: \(patient.Height)cm")
+                    Text("Weight: \(patient.Weight)kg")
                 }
                 Section(header: Text("Detailed Condition")){
                     HStack{
@@ -92,7 +92,7 @@ struct New_Consultation_Req_View: View {
                     .background(Color.background)
                     .clipShape(RoundedRectangle(cornerRadius: 10))
             }
-
+            .disabled(selectedDoctor == nil || selectedDepartment == nil)
         }
         .navigationTitle("New Consultation")
     }

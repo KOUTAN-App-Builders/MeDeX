@@ -106,6 +106,7 @@ struct Add_Department_View: View {
 struct Edit_Department_View: View {
     
     @Environment(\.modelContext) var Context
+    @Environment(\.dismiss) var dismiss
     @Bindable var Department: Clinical_Department_Data_Model
     
     var body: some View {
@@ -125,6 +126,7 @@ struct Edit_Department_View: View {
                 .padding()
             Button {
                 saveDepartmentData()
+                dismiss()
             } label: {
                 Text("Update")
                     .frame(width: 150,height: 30)
@@ -134,6 +136,7 @@ struct Edit_Department_View: View {
             }
             Button {
                 deleteDepartmentData(Department)
+                dismiss()
             } label: {
                 Label("Delete", systemImage: "trash")
                     .frame(width: 150,height: 30)

@@ -20,8 +20,10 @@ struct MeDeX_for_MacApp: App {
             NavigationStack{
                 if isFirstLaunch{
                     Welcome_View()
+                        //.toolbar(removing: .title)
                 }else{
                     ContentView()
+                        //.toolbar(removing: .title)
                 }
             }
             .modelContainer(dataManager.container)

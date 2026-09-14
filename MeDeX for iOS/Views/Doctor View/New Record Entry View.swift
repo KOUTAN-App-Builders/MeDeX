@@ -34,6 +34,17 @@ struct New_Record_Entry_View: View {
                 Text("Prescription: ")
                 TextEditor(text: $prescription)
             }
+            Button {
+                addNewRecord()
+                dismiss()
+            } label: {
+                Text("Save")
+                    .frame(width: 200, height: 55)
+                    .background(Color.blue)
+                    .foregroundStyle(Color.white)
+                    .padding()
+            }
+
         }
         .navigationTitle("Create new record")
     }
