@@ -63,7 +63,7 @@ struct Patient_Detail_View: View {
                         }
                         List(patient.ClinicalRecord, id: \.id){ record in
                             VStack{
-                                Text("Visit Date: \(record.Date, format: .dateTime.year().month().day())")
+                                Text("Visit Date: \(record.Date, style: .date)")
                                     .font(.caption)
                                 Text(record.Diagnosis)
                                     .font(.caption2)

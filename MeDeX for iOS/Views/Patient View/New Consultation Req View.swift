@@ -13,6 +13,7 @@ struct New_Consultation_Req_View: View {
     
     //@Bindable var patient: Patient_Data
     @Query private var departments: [Clinical_Department_Data_Model]
+    @Query private var doctors: [Doctor_Data]
     @Bindable var patient: Patient_Data
     @State private var selectedDepartment: Clinical_Department_Data_Model? = nil
     @State private var selectedDoctor: Doctor_Data? = nil
@@ -64,6 +65,25 @@ struct New_Consultation_Req_View: View {
                             .keyboardType(.decimalPad)
                     }
                 }
+                
+                Section(header: Text("Department & Doctor")) {
+                    HStack{
+                        Text("Department: ")
+                        Picker("", selection: $selectedDepartment) {
+                            ForEach(departments, id: \.self){ dep in
+                                Text(dep.DepartmentName).tag(Optional(dep))
+                            }
+                        }
+                    }
+                    HStack{
+                        Text("Doctor: ")
+                        Picker("", selection: $selectedDoctor) {
+                            ForEach(doctors, id: \.self){ doctor in
+                                Text("Dr. \(doctor.UserName)").tag(Optional(doctor))
+                            }
+                        }
+                    }
+                }
                 Section(header: Text("Your Current Situation")){
                     HStack{
                         Text("Symptoms: ")
@@ -73,10 +93,9 @@ struct New_Consultation_Req_View: View {
                         Button {
                             isUrgent.toggle()
                         } label: {
-                            Image(systemName: isUrgent ? "checkmark.square.fill" : "checkmark.square")
+                            Image(systemName: isUrgent ? "checkmark.square.fill" : "square")
                                 //.symbolEffect(.drawOn) <- Will be fixed in future version.
-                                .backgroundStyle(Color.blue)
-                                .foregroundStyle(Color.white)
+                                .foregroundStyle(Color.blue)
                         }
                         Text("Is this an emergency?")
                     }

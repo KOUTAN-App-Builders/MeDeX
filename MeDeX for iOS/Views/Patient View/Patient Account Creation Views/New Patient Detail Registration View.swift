@@ -28,27 +28,27 @@ struct New_Patient_Detail_Registration_View: View {
             HStack{
                 Text("Sex: ")
                 Picker("", selection: $patientDraft.Sex) {
-                    List(sex.allCases, id: \.self){ sex in
-                        Text(sex.rawValue.capitalized)
+                    ForEach(sex.allCases, id: \.self){ sex in
+                        Text(sex.rawValue.capitalized).tag(sex)
                     }
                 }
             }
             HStack{
                 Text("Bloodtype: ")
                 Picker("", selection: $patientDraft.Bloodtype) {
-                    List(bloodType.allCases, id: \.self){ bloodtype in
-                        Text(bloodtype.rawValue.capitalized)
+                    ForEach(bloodType.allCases, id: \.self){ bloodtype in
+                        Text(bloodtype.rawValue.capitalized).tag(bloodtype)
                     }
                 }
             }
             HStack{
                 Text("Height: ")
-                TextField("170.description", value: $patientDraft.Height, formatter: numberFormatter)
+                TextField("170", value: $patientDraft.Height, formatter: numberFormatter)
                     .keyboardType(.decimalPad)
             }
             HStack{
                 Text("Weight: ")
-                TextField("60.description", value: $patientDraft.Weight, formatter: numberFormatter)
+                TextField("60", value: $patientDraft.Weight, formatter: numberFormatter)
             }
             HStack{
                 Button {
@@ -56,7 +56,7 @@ struct New_Patient_Detail_Registration_View: View {
                 } label: {
                     Text("Go back")
                         .frame(width: 200, height: 55)
-                        .backgroundStyle(Color.gray)
+                        .background(Color.gray)
                         .foregroundStyle(Color.white)
                         .padding()
                 }
@@ -65,7 +65,7 @@ struct New_Patient_Detail_Registration_View: View {
                 } label: {
                     Text("Next")
                         .frame(width: 200, height: 55)
-                        .backgroundStyle(Color.blue)
+                        .background(Color.blue)
                         .foregroundStyle(Color.white)
                         .padding()
                 }
@@ -76,7 +76,9 @@ struct New_Patient_Detail_Registration_View: View {
                 Spacer()
             }
             ProgressView(value: progress)
+                .padding(.horizontal)
         }
+        .padding(.horizontal)
         .navigationTitle("Add Personal Details")
     }
 }

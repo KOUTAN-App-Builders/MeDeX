@@ -30,16 +30,19 @@ The project is organized into a workspace containing two main app targets and on
 
 ## Development Status & Roadmap
 - **Current State:** macOS and iOS UI structures are created. Core SwiftData models, **Secure Credential Storage** (Keychain/AppStorage), and patient registration drafts are in place.
-- **Recent Progress (2026/09/10):**
+- **Recent Progress (2026/09/16):**
+    - Resolved potential runtime crashes: safely unwrapped last visit date on patients with zero records in `Full_Patient_List_View.swift` (iOS & Mac).
+    - Added Save button and dismissal to iOS `New_Record_Entry_View.swift`.
+    - Integrated Department & Doctor selection pickers in `New_Consultation_Req_View.swift`.
+    - Added Logout button to iOS `Patient_Home_View.swift`.
+    - Implemented default window dimensions (`.defaultSize`) on macOS in `MeDeX_for_MacApp.swift`.
+    - Added Administrator deletion in Mac admin settings and standardized `Picker` tags across forms.
+- **Previous Progress (2026/09/10):**
     - Built iOS doctor workflow views (`Doctor_Home_View`, `Patients_for_Today_View`, `Full_Patient_List_View` with search, `Patient_Detail_View`, `New_Record_Entry_View`).
     - Added SwiftData insertion and auto-dismissal to `New_Appointment_View.swift`.
     - Added `Terms_and_Conditions_View.swift` and linked it from patient registration confirmation.
     - Added `Consultation_Request_Data` to `makeContainer` schema in `Persistence.swift`.
     - Updated macOS doctor views to consume incoming consultation requests.
-- **Previous Progress (2026/09/07):**
-    - Built complete multi-step patient registration wizard (`New_Patient_Credential_Registration_View`, `New_Patient_Detail_Registration_View`, `New_Patient_Record_Registration_View`, `New_Patient_Confirmation_View`) with `ProgressView`, return-and-edit navigation, and SwiftData persistence.
-    - Completed structured `Form` content for `Appointment_Detail_View.swift` and `Clinical_Record_Detail_View.swift`.
-    - Integrated `NumberFormatter` across registration and consultation request numeric fields.
 - **Next Steps:**
     - **Step 1 (UI Completion & Accessibility):** Fill in missing form controls (`DatePicker`, `Picker`, form state fields) for consultation requests, appointments, patient registration, and detail views. Ensure accessible, user-friendly layouts across iOS and macOS.
     - **Step 2 (Generative AI Integration):** Implement Foundation Models Framework for medical record entry drafting and MedGemma for diagnostic support.

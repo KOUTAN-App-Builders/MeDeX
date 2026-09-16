@@ -18,12 +18,12 @@ struct Doctor_Home_View: View {
     var body: some View {
         VStack{
             Picker("Select Department: ", selection: $selectedDepartment) {
-                List(doctor.ClinicalDepartment){ dep in
-                    Text(dep.DepartmentName)
+                ForEach(doctor.ClinicalDepartment, id: \.self){ dep in
+                    Text(dep.DepartmentName).tag(Optional(dep))
                 }
             }
             TabView{
-                Tab("Patients Today", systemImage: "calendar.today") {
+                Tab("Patients Today", systemImage: "calendar.day") {
                     if selectedDepartment == nil {
                         Text("Please select your department.")
                     }else{

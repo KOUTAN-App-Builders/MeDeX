@@ -19,7 +19,7 @@ struct Clinical_Record_Detail_View: View {
                 Text("Patient Name: \(record.Patient.Name)")
                 Text("Department: \(record.ClinicalDepartment.DepartmentName)")
                 Text("Doctor: \(record.Doctor.UserName)")
-                Text("Date: ") + Text(record.Date, format: .dateTime)
+                Text("Date: ") + Text(record.Date, style: .date)
             }
             Section("Details") {
                 Text("Symptoms: \(record.Symptoms)")

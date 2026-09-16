@@ -25,7 +25,7 @@ struct New_Patient_Confirmation_View: View {
                     Text("Password: \(String(repeating: "•", count: patientDraft.Password.count))")
                 }
                 Section("Personal Information") {
-                    Text("BirthDate: ") + Text(patientDraft.BirthDate, format: .dateTime)
+                    Text("BirthDate: ") + Text(patientDraft.BirthDate, style: .date)
                     Text("Sex: \(patientDraft.Sex.rawValue)")
                     Text("Bloodtype: \(patientDraft.Bloodtype.rawValue)")
                     Text("Height: \(patientDraft.Height)")
@@ -79,7 +79,7 @@ struct New_Patient_Confirmation_View: View {
             } label: {
                 Text("Save and Close")
                     .frame(width: 200, height: 55)
-                    .backgroundStyle(Color.blue)
+                    .background(Color.blue)
                     .foregroundStyle(Color.white)
                     .padding()
             }

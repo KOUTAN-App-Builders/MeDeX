@@ -92,9 +92,8 @@ struct Doctor_Data_Detail_View: View {
                 Spacer()
             }
             Picker("Clinical Department:", selection: $Doctor.ClinicalDepartment) {
-                ForEach(departments){ department in
-                    Text(department.DepartmentName)
-                        .tag(Optional(department))
+                ForEach(departments, id: \.self){ department in
+                    Text(department.DepartmentName).tag(Optional(department))
                 }
             }.pickerStyle(.menu)
             Button {
@@ -168,8 +167,8 @@ struct Doctor_Data_Creation_View: View {
                 }
             }
             Picker("Select your department.", selection: $selectedDepartment) {
-                ForEach(ClinicalDepartments) { Department in
-                        Text(Department.DepartmentName)
+                ForEach(ClinicalDepartments, id: \.self) { Department in
+                    Text(Department.DepartmentName).tag(Optional(Department))
                     }
             }
             Button {

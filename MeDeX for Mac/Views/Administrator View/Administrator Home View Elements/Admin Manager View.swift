@@ -86,6 +86,16 @@ struct Admin_Editor_View: View {
                     .foregroundStyle(Color.white)
                     .padding()
             }
+            Button {
+                deleteAdminData()  // Since this is critical, will add a confirmation dialog later.
+                Dismiss()
+            } label: {
+                Label("Delete", systemImage: "trash")
+                    .frame(width: 70, height: 10)
+                    .background(Color.gray)
+                    .foregroundStyle(Color.red)
+                    .padding()
+            }
         }
     }
     func UpdateAdminData() {
@@ -95,6 +105,9 @@ struct Admin_Editor_View: View {
             // Handle save error if needed
             print("Failed to save admin updates: \(error)")
         }
+    }
+    func deleteAdminData() {
+        modelContext.delete(admin)
     }
 }
 

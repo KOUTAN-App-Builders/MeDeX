@@ -44,6 +44,19 @@ struct Patient_Home_View: View {
                     }
                 }
             }
+            NavigationLink {
+                Patient_Login_View()
+                    .navigationBarBackButtonHidden()
+            } label: {
+                Text("Logout")
+                    .frame(width: 200, height: 55)
+                    .bold()
+                    .background(Color.black.opacity(0.05))
+                    .foregroundStyle(Color.accent)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                    .padding()
+            }
+
         }
         .navigationTitle("Hello, \(patient.Name).")
         .toolbar {

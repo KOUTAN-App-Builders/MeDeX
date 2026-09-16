@@ -98,8 +98,9 @@ struct New_Patient_Credential_Registration_View: View {
                 Spacer()
             }
             ProgressView(value: progress)
-                .padding()
+                .padding(.horizontal)
         }
+        .padding(.horizontal)
         .navigationTitle("Add Credentials")
         .navigationDestination(isPresented: $passwordMatched) {
             New_Patient_Detail_Registration_View(patientDraft: patientDraft, showSheet: $showSheet)

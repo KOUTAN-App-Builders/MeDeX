@@ -14,6 +14,7 @@ struct Doctor_Home_View: View {
     @Query private var patients: [Patient_Data]
     @State private var selectedUI: DoctorViewSelector = .Patients_For_Today
     @Bindable var Doctor: Doctor_Data
+    @Query private var departments: [Clinical_Department_Data_Model]
     @State var selectedDepartment: Clinical_Department_Data_Model? = nil
     
     var body: some View {
@@ -35,9 +36,9 @@ struct Doctor_Home_View: View {
                             .clipShape(RoundedRectangle(cornerRadius: 10))
                     }
                 }
-                Menu("Select a department:"){
-                    List(Doctor.ClinicalDepartment, selection: $selectedDepartment){ dep in
-                        Text(dep.DepartmentName)
+                Picker("Select your department: ", selection: $selectedDepartment){
+                    ForEach(Doctor.ClinicalDepartment, id: \.self){ dep in
+                        Text(dep.DepartmentName).tag(Optional(dep))
                     }
                 }
                 Picker("", selection: $selectedUI) {

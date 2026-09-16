@@ -30,7 +30,7 @@ struct Full_Patient_List_View: View {
                         if patient.ClinicalRecord.isEmpty {
                             Text("No record yet")
                         }else{
-                            Text("Last visited: ") + Text(patient.ClinicalRecord.last!.Date, format: .dateTime)
+                            Text("Last visited: ") + Text(patient.ClinicalRecord.last!.Date, style: .date)
                         }
                     }
                 }

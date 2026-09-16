@@ -40,16 +40,16 @@ struct New_Appointment_View: View {
                     HStack{
                         Text("Department: ")
                         Picker("", selection: $selectedDepartment) {
-                            List(departments) { dep in
-                                Text(dep.DepartmentName)
+                            ForEach(departments, id: \.self) { dep in
+                                Text(dep.DepartmentName).tag(Optional(dep))
                             }
                         }
                     }
                     HStack{
                         Text("Doctor: ")
                         Picker("", selection: $doctor) {
-                            List(doctors) { doctor in
-                                Text("Dr. \(doctor.UserName)")
+                            ForEach(doctors, id: \.self) { doctor in
+                                Text("Dr. \(doctor.UserName)").tag(Optional(doctor))
                             }
                         }
                     }

@@ -23,7 +23,7 @@ struct Appointment_Detail_View: View {
             }
             Section("Details") {
                 Text("Purpose: \(appointment.appointmentReason)")
-                Text("Is it an emergency?") + Text(appointment.isAnEmergency ? "Yes" : "No")
+                Text("Is it an emergency?: ") + Text(appointment.isAnEmergency ? "Yes" : "No")
             }
         }
     }

@@ -31,7 +31,7 @@ struct Patient_Detail_View: View {
                         Text(rec.Diagnosis) // Probably summarize with Apple Intelligence in future updates
                             .font(.title)
                         Text(rec.ClinicalDepartment.DepartmentName)
-                        Text(rec.Date, format: .dateTime)
+                        Text(rec.Date, style: .date)
                     }
                 }
             }

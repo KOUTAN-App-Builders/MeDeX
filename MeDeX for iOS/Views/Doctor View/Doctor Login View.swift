@@ -74,5 +74,7 @@ struct Doctor_Login_View: View {
 }
 
 #Preview(traits: .sampleData) {
-    Doctor_Login_View()
+    NavigationStack{
+        Doctor_Login_View()
+    }
 }
