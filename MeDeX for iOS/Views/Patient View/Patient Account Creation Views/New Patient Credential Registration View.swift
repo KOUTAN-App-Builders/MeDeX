@@ -13,8 +13,6 @@ struct New_Patient_Credential_Registration_View: View {
     @Bindable var patientDraft: PatientDraft
     @Binding var showSheet: Bool
     @State private var showPassword: Bool = false
-    @State private var Password: String = ""
-    @State private var PasswordConfirmation: String = ""
     @State private var showPasswordConfirmation: Bool = false
     @Environment(\.dismiss) var Dismiss
     @State private var passwordMatched: Bool = false
@@ -33,13 +31,19 @@ struct New_Patient_Credential_Registration_View: View {
             HStack{
                 Text("Password:")
                 if showPassword == true {
-                    TextField("", text: $Password)
+                    TextField("", text: $patientDraft.Password)
                         .frame(width: 200)
                         .padding()
+                        .textInputAutocapitalization(.never)
+                        .autocorrectionDisabled(true)
+                        .privacySensitive()
                 }else{
-                    SecureField("", text: $Password)
+                    SecureField("", text: $patientDraft.Password)
                         .frame(width: 200)
                         .padding()
+                        .textInputAutocapitalization(.never)
+                        .autocorrectionDisabled(true)
+                        .privacySensitive()
                 }
                 Button {
                     showPassword.toggle()
@@ -50,13 +54,19 @@ struct New_Patient_Credential_Registration_View: View {
             HStack{
                 Text("Password Confirmation:")
                 if showPasswordConfirmation == true {
-                    TextField("", text: $PasswordConfirmation)
+                    TextField("", text: $patientDraft.PasswordConfirmation)
                         .frame(width: 200)
                         .padding()
+                        .textInputAutocapitalization(.never)
+                        .autocorrectionDisabled(true)
+                        .privacySensitive()
                 }else{
-                    SecureField("", text: $PasswordConfirmation)
+                    SecureField("", text: $patientDraft.PasswordConfirmation)
                         .frame(width: 200)
                         .padding()
+                        .textInputAutocapitalization(.never)
+                        .autocorrectionDisabled(true)
+                        .privacySensitive()
                 }
                 Button {
                     showPasswordConfirmation.toggle()
@@ -90,7 +100,7 @@ struct New_Patient_Credential_Registration_View: View {
                         .foregroundStyle(Color.white)
                         .padding()
                 }
-                .disabled(patientDraft.Name.isEmpty || Password.isEmpty || PasswordConfirmation.isEmpty)
+                .disabled(patientDraft.Name.isEmpty || patientDraft.Password.isEmpty || patientDraft.PasswordConfirmation.isEmpty)
             }
             HStack{
                 Spacer()
@@ -108,8 +118,7 @@ struct New_Patient_Credential_Registration_View: View {
     }
     func checkPasswordMatch() {
         passwordMatchError = false
-        if !patientDraft.Name.isEmpty && !Password.isEmpty && Password == PasswordConfirmation {
-            patientDraft.Password = Password
+        if !patientDraft.Name.isEmpty && !patientDraft.Password.isEmpty && patientDraft.Password == patientDraft.PasswordConfirmation {
             passwordMatched = true
         }else{
             passwordMatchError = true

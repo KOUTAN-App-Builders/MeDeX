@@ -12,7 +12,7 @@ import SwiftUI
 public class PatientDraft {
     public var Name: String = ""
     public var Password: String = ""
-    //public var PasswordConfirmation: String = ""
+    public var PasswordConfirmation: String = ""
     public var BirthDate: Date = Date()
     public var Sex: sex = .male
     public var Bloodtype: bloodType = .A

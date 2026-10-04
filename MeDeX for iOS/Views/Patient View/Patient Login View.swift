@@ -33,9 +33,15 @@ struct Patient_Login_View: View {
                 if showPassword == true{
                     TextField("Password", text: $Password)
                         .frame(width: 200)
+                        .textInputAutocapitalization(.never)
+                        .autocorrectionDisabled(true)
+                        .privacySensitive()
                 }else{
                     SecureField("Password", text: $Password)
                         .frame(width: 200)
+                        .textInputAutocapitalization(.never)
+                        .autocorrectionDisabled(true)
+                        .privacySensitive()
                 }
                 Button {
                     showPassword.toggle()

@@ -31,9 +31,15 @@ struct Doctor_Login_View: View {
                 if showPassword == true{
                     TextField("", text: $Password)
                         .frame(width: 200)
+                        .textInputAutocapitalization(.never)
+                        .autocorrectionDisabled(true)
+                        .privacySensitive()
                 }else{
                     SecureField("", text: $Password)
                         .frame(width: 200)
+                        .textInputAutocapitalization(.never)
+                        .autocorrectionDisabled(true)
+                        .privacySensitive()
                 }
                 Button {
                     showPassword.toggle()

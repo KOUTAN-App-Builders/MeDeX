@@ -91,11 +91,25 @@ struct Doctor_Data_Detail_View: View {
                 TextField("Password", text: $Doctor.Password)
                 Spacer()
             }
-            Picker("Clinical Department:", selection: $Doctor.ClinicalDepartment) {
-                ForEach(departments, id: \.self){ department in
-                    Text(department.DepartmentName).tag(Optional(department))
+            HStack(alignment: .top){
+                Text("Clinical Department: ")
+                VStack(alignment: .leading){
+                    ForEach(departments, id: \.self){ dep in
+                        Button {
+                            if let index = Doctor.ClinicalDepartment.firstIndex(of: dep){
+                                Doctor.ClinicalDepartment.remove(at: index)
+                            }else{
+                                Doctor.ClinicalDepartment.append(dep)
+                            }
+                        } label: {
+                            HStack{
+                                Image(systemName: Doctor.ClinicalDepartment.contains(dep) ? "checkmark.square.fill" : "square")
+                                Text(dep.DepartmentName)
+                            }
+                        }
+                    }
                 }
-            }.pickerStyle(.menu)
+            }
             Button {
                 saveChanges()
                 Dismiss()
@@ -117,7 +131,7 @@ struct Doctor_Data_Detail_View: View {
 struct Doctor_Data_Creation_View: View {
     
     @Query var Doctors: [Doctor_Data]
-    @Query var ClinicalDepartments: [Clinical_Department_Data_Model]
+    @Query var departments: [Clinical_Department_Data_Model]
     @Environment(\.modelContext) var Context
     @Environment(\.dismiss) var Dismiss
     @State private var NewDoctorName: String = ""
@@ -166,24 +180,39 @@ struct Doctor_Data_Creation_View: View {
                     Image(systemName: showPasswordConfirmation ? "eye.slash" : "eye")
                 }
             }
-            Picker("Select your department.", selection: $selectedDepartment) {
-                ForEach(ClinicalDepartments, id: \.self) { Department in
-                    Text(Department.DepartmentName).tag(Optional(Department))
+            HStack(alignment: .top){
+                Text("Clinical Department: ")
+                VStack(alignment: .leading){
+                    ForEach(departments, id: \.self){ dep in
+                        Button {
+                            if let index = selectedDepartment.firstIndex(of: dep){
+                                selectedDepartment.remove(at: index)
+                            }else{
+                                selectedDepartment.append(dep)
+                            }
+                        } label: {
+                            HStack{
+                                Image(systemName: selectedDepartment.contains(dep) ? "checkmark.square.fill" : "square")
+                                Text(dep.DepartmentName)
+                            }
+                        }
                     }
+                }
             }
             Button {
-                if NewDoctorPassword == NewDoctorPasswordConfirmation{
+                if NewDoctorName != "" && NewDoctorPassword != "" && NewDoctorPassword == NewDoctorPasswordConfirmation{
                     isPasswordCorrect = true
                     addNewDoctor()
                     Dismiss()
                 }else{
-                 isPasswordCorrect = false
+                    isPasswordCorrect = false
                 }
             } label: {
                 Text("Save")
                     .background(isPasswordCorrect ? Color.accent : Color.red)
                     .foregroundStyle(Color.white)
             }
+            .disabled(isPasswordCorrect)
         }
         .padding()
         .navigationTitle("Add Doctor")

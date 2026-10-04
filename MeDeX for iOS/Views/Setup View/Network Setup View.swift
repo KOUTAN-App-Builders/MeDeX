@@ -41,8 +41,14 @@ struct Network_Setup_View: View {
                         Text("Password")
                         if showPassword == true{
                             TextField("Password", text: $Password)
+                                .textInputAutocapitalization(.never)
+                                .autocorrectionDisabled(true)
+                                .privacySensitive()
                         }else{
                             SecureField("Password", text: $Password)
+                                .textInputAutocapitalization(.never)
+                                .autocorrectionDisabled(true)
+                                .privacySensitive()
                         }
                         Button {
                             showPassword.toggle()
